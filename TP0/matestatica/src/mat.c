@@ -19,23 +19,39 @@
 // Macro que realiza swap sem variavel auxiliar
 #define ELEMSWAP(x,y) (x+=y,y=x-y,x-=y)
 
-void criaMatriz(mat_tipo * mat, int tx, int ty, int id)
+mat_tipo* criaMatriz(int tx, int ty, int id)
 // Descricao: cria matriz com dimensoes tx X ty
 // Entrada: mat, tx, ty, id
 // Saida: mat
 {
-  // verifica se os valores de tx e ty são validos
-  erroAssert(tx>0,"Dimensao nula");
-  erroAssert(ty>0,"Dimensao nula");
-  erroAssert(tx<=MAXTAM,"Dimensao maior que permitido");
-  erroAssert(ty<=MAXTAM,"Dimensao maior que permitido");
+    mat_tipo *mat;
+    mat = (mat_tipo *) malloc(sizeof(mat_tipo));
+    
+    erroAssert(mat != NULL, "Erro ao alocar matriz!");
 
-  // inicializa as dimensoes da matriz
-  mat->tamx = tx;
-  mat->tamy = ty;
-  // inicializa o identificador da matriz, para rastreamento
-  mat->id = id;
+    // verifica se os valores de tx e ty são validos
+    erroAssert(tx>0,"Dimensao nula");
+    erroAssert(ty>0,"Dimensao nula");
+    
+    mat->m = (double **)malloc(sizeof(double *) * tx);
+    // verifica se a matriz foi alocada corretamente
+    erroAssert(mat->m != NULL, "Erro ao alocar matriz!");
+    
+    for (int i = 0; i < tx; i++)
+    {
+        mat->m[i] = (double *)malloc(sizeof(double)*ty);
+        // verifica se a matriz foi alocada corretamente
+        erroAssert(mat->m[i] != NULL, "Erro ao alocar matriz!");
+
+    }
+    // inicializa as dimensoes da matriz
+    mat->tamx = tx;
+    mat->tamy = ty;
+    // inicializa o identificador da matriz, para rastreamento
+    mat->id = id;
+    return mat;
 }
+
 
 void inicializaMatrizNula(mat_tipo * mat)
 // Descricao: inicializa mat com valores nulos 
@@ -148,7 +164,7 @@ void copiaMatriz(mat_tipo *src, mat_tipo * dst, int dst_id)
   int i,j;
 
   // cria novamente a matriz dst para ajustar as suas dimensoes
-  criaMatriz(dst,src->tamx, src->tamy,dst_id);
+  dst = criaMatriz(src->tamx, src->tamy,dst_id);
   // inicializa a matriz dst como nula
   inicializaMatrizNula(dst);
   // copia os elementos da matriz src
@@ -172,7 +188,11 @@ void somaMatrizes(mat_tipo *a, mat_tipo *b, mat_tipo *c)
   erroAssert(a->tamy==b->tamy,"Dimensoes incompativeis");
 
   // inicializa a matriz c garantindo a compatibilidade das dimensoes
-  criaMatriz(c,a->tamx, a->tamy, c->id);
+  if (c != NULL)
+  {
+      destroiMatriz(c);
+  }
+  c = criaMatriz(a->tamx, a->tamy, c->id);
   inicializaMatrizNula(c);
 
   // faz a soma elemento a elemento
@@ -195,8 +215,13 @@ void multiplicaMatrizes(mat_tipo *a, mat_tipo *b, mat_tipo *c)
   // verifica a compatibilidade das dimensoes 
   erroAssert(a->tamy==b->tamx,"Dimensoes incompativeis");
 
+  // inicializa a matriz c garantindo a compatibilidade das dimensoes
+  if (c != NULL)
+  {
+    destroiMatriz(c);
+  }
   // cria e inicializa a matriz c
-  criaMatriz(c,a->tamx, b->tamy,c->id);
+  c = criaMatriz(a->tamx, b->tamy,c->id);
   inicializaMatrizNula(c);
 
   // realiza a multiplicacao de matrizes
@@ -239,9 +264,15 @@ void destroiMatriz(mat_tipo *a)
 // Entrada: a
 // Saida: a
 {
-  // apenas um aviso se a matriz for destruida mais de uma vez
-  avisoAssert(((a->tamx>0)&&(a->tamy>0)),"Matriz já foi destruida");
 
-  // torna as dimensoes invalidas
-  a->id = a->tamx = a->tamy = -1;
+    // apenas um aviso se a matriz for destruida mais de uma vez
+    avisoAssert(((a->tamx>0)&&(a->tamy>0)),"Matriz já foi destruida");
+    
+    for (int i = 0; i < a->tamx; i++)
+    {
+        free(a->m[i]);
+    }
+    free(a->m);
+    free(a);
+
 }

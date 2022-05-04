@@ -16,12 +16,12 @@
 #endif
 
 typedef struct mat{
-	double m[MAXTAM][MAXTAM];
+	double **m;
 	int tamx, tamy;
 	int id;
 } mat_tipo;
 
-void criaMatriz(mat_tipo * mat, int tx, int ty, int id);
+mat_tipo* criaMatriz(int tx, int ty, int id);
 void inicializaMatrizNula(mat_tipo * mat);
 void inicializaMatrizAleatoria(mat_tipo * mat);
 double acessaMatriz(mat_tipo * mat);

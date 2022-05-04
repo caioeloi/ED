@@ -1,0 +1,377 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed May  4 19:46:44 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 19)
+OBJ = obj
+# makefile (from 'Makefile', line 18)
+SRC = src
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# makefile (from 'Makefile', line 26)
+EXE = $(BIN)/matop
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/caiozec/UFMG/ED/TP0/matestatica
+# makefile
+SHELL = /bin/sh
+# makefile (from 'Makefile', line 21)
+BIN = bin
+# environment
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{}}
+# environment
+_ = /home/caiozec/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/node
+# makefile (from 'Makefile', line 24)
+CFLAGS = -pg -Wall -c -I$(INC)
+# makefile (from 'Makefile', line 23)
+HDRS = $(INC)/mat.h $(INC)/memlog.h $(INC)/msgassert.h
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 22)
+OBJS = $(OBJ)/matop.o $(OBJ)/mat.o $(OBJ)/memlog.o
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/caiozec/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/bin/remote-cli:/home/caiozec/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/Loja integrada/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/heroku/bin:/mnt/c/Users/Loja integrada/AppData/Local/GitHubDesktop/bin:/snap/bin
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-9efc8af2-8588-4a60-a62c-b9a53140bf3d.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/caiozec/UFMG/ED/TP0/matestatica
+# default
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/11_interop
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/caiozec
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+LOGNAME = caiozec
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 16)
+CC = gcc
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = caiozec
+# makefile
+.DEFAULT_GOAL := all
+# environment
+NAME = DESKTOP-FMF69BN
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Loja integrada/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.2
+# default
+MAKE_COMMAND := make
+# makefile (from 'Makefile', line 20)
+INC = include
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# makefile (from 'Makefile', line 17)
+LIBS = -lm
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
+# variable set hash-table stats:
+# Load=77/1024=8%, Rehash=0, Collisions=13/139=9%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2064, inode 62397): 9 files, no impossibilities.
+
+# 9 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+include/memlog.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 18:23:18.659276331
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/memlog.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 18:23:18.659276331
+#  File has been updated.
+#  Successfully updated.
+
+all: mem perf gprof
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/9=0%
+
+perf: bin/matop
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 36):
+	$(EXE) -s -p /tmp/soma100.out  -x 100 -y 100
+	$(EXE) -m -p /tmp/mult100.out  -x 100 -y 100
+	$(EXE) -t -p /tmp/transp100.out  -x 100 -y 100
+	$(EXE) -s -p /tmp/soma200.out  -x 200 -y 200
+	$(EXE) -m -p /tmp/mult200.out  -x 200 -y 200
+	$(EXE) -t -p /tmp/transp200.out  -x 200 -y 200
+	$(EXE) -s -p /tmp/soma300.out  -x 300 -y 300
+	$(EXE) -m -p /tmp/mult300.out  -x 300 -y 300
+	$(EXE) -t -p /tmp/transp300.out  -x 300 -y 300
+	$(EXE) -s -p /tmp/soma400.out  -x 400 -y 400
+	$(EXE) -m -p /tmp/mult400.out  -x 400 -y 400
+	$(EXE) -t -p /tmp/transp400.out  -x 400 -y 400
+	$(EXE) -s -p /tmp/soma500.out  -x 500 -y 500
+	$(EXE) -m -p /tmp/mult500.out  -x 500 -y 500
+	$(EXE) -t -p /tmp/transp500.out  -x 500 -y 500
+	$(EXE) -m -p /tmp/mult100log.out -l -x 100 -y 100
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/mat.o: include/mat.h include/memlog.h include/msgassert.h src/mat.c
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-04 19:38:24.059345909
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 69):
+	$(CC) $(CFLAGS) -o $(OBJ)/mat.o $(SRC)/mat.c 
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 18:23:18.659276331
+#  File has been updated.
+#  Successfully updated.
+
+obj/matop.o: include/mat.h include/memlog.h include/msgassert.h src/matop.c
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-04 19:38:51.96934634
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 66):
+	$(CC) $(CFLAGS) -o $(OBJ)/matop.o $(SRC)/matop.c 
+
+mem: bin/matop
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := mem
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := bin/matop
+# automatic
+# | := 
+# automatic
+# < := bin/matop
+# automatic
+ 
+# ^ := bin/matop
+# automatic
+# ? := bin/matop
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=4/17=24%
+#  recipe to execute (from 'Makefile', line 31):
+	$(EXE) -s -p /tmp/somalog.out -l -x 4 -y 5
+	$(EXE) -m -p /tmp/multlog.out -l -x 5 -y 5
+	$(EXE) -t -p /tmp/transplog.out -l -x 5 -y 4
+
+# Not a target:
+include/mat.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 19:19:11.52932811
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/mat.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 19:37:53.129345432
+#  File has been updated.
+#  Successfully updated.
+
+gprof: bin/matop
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 54):
+	$(EXE) -s -p /tmp/soma500gprof.out  -x 500 -y 500
+	gprof $(EXE) gmon.out > /tmp/soma500gprof.txt
+	$(EXE) -m -p /tmp/mult500gprof.out  -x 500 -y 500
+	gprof $(EXE) gmon.out > /tmp/mult500gprof.txt
+	$(EXE) -t -p /tmp/transp500gprof.out  -x 500 -y 500
+	gprof $(EXE) gmon.out > /tmp/transp500gprof.txt
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/matop.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 19:38:45.559346241
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+include/msgassert.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-04 18:23:18.659276331
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 75):
+	rm -f $(EXE) $(OBJS) gmon.out
+
+obj/memlog.o: include/mat.h include/memlog.h include/msgassert.h src/memlog.c
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-04 19:38:24.07934591
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 72):
+	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.c 
+	
+
+bin/matop: obj/matop.o obj/mat.o obj/memlog.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-04 19:38:52.029346341
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 63):
+	$(CC) -pg -o $(BIN)/matop $(OBJS) $(LIBS)
+
+# files hash-table stats:
+# Load=18/1024=2%, Rehash=0, Collisions=0/58=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 28 / storage = 258 B / avg = 9 B
+# current buf: size = 8162 B / used = 258 B / count = 28 / avg = 9 B
+
+# strcache performance: lookups = 58 / hit rate = 51%
+# hash-table stats:
+# Load=28/8192=0%, Rehash=0, Collisions=1/58=2%
+# Finished Make data base on Wed May  4 19:46:44 2022
+
+ 

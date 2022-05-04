@@ -111,7 +111,7 @@ int main(int argc, char ** argv)
 // Saida: depende da operacao escolhida
 {
   // ate 3 matrizes sao utilizadas, dependendo da operacao
-  mat_tipo a, b, c;
+  mat_tipo *a, *b, *c;
 
   // avaliar linha de comando
   parse_args(argc,argv);
@@ -133,58 +133,58 @@ int main(int argc, char ** argv)
          // cria matrizes a e b aleatorias, que sao somadas para a matriz c
 	 // matriz c é impressa e todas as matrizes sao destruidas
 	 defineFaseMemLog(0);
-         criaMatriz(&a,optx,opty,0);
-         inicializaMatrizAleatoria(&a);
-         criaMatriz(&b,optx,opty,1);
-         inicializaMatrizAleatoria(&b);
-         criaMatriz(&c,optx,opty,2);
-         inicializaMatrizNula(&c);
+         a = criaMatriz(optx,opty,0);
+         inicializaMatrizAleatoria(a);
+         b = criaMatriz(optx,opty,1);
+         inicializaMatrizAleatoria(b);
+         c = criaMatriz(optx,opty,2);
+         inicializaMatrizNula(c);
 	 defineFaseMemLog(1);
-         acessaMatriz(&a);
-         acessaMatriz(&b);
-         acessaMatriz(&c);
-         somaMatrizes(&a,&b,&c);
+         acessaMatriz(a);
+         acessaMatriz(b);
+         acessaMatriz(c);
+         somaMatrizes(a,b,c);
 	 defineFaseMemLog(2);
-         acessaMatriz(&c);
-	 if (regmem) imprimeMatriz(&c);
-         destroiMatriz(&a);
-         destroiMatriz(&b);
-         destroiMatriz(&c);
+         acessaMatriz(c);
+	 if (regmem) imprimeMatriz(c);
+         destroiMatriz(a);
+         destroiMatriz(b);
+         destroiMatriz(c);
 	 break;
     case OPMULTIPLICAR:
          // cria matrizes a e b aleatorias, que sao multiplicadas para matriz c
 	 // matriz c é impressa e todas as matrizes sao destruidas
 	 defineFaseMemLog(0);
-         criaMatriz(&a,optx,opty,0);
-         inicializaMatrizAleatoria(&a);
-         criaMatriz(&b,opty,optx,1);
-         inicializaMatrizAleatoria(&b);
-         criaMatriz(&c,optx,optx,2);
-         inicializaMatrizNula(&c);
+         a = criaMatriz(optx,opty,0);
+         inicializaMatrizAleatoria(a);
+         b = criaMatriz(opty,optx,1);
+         inicializaMatrizAleatoria(b);
+         c = criaMatriz(optx,optx,2);
+         inicializaMatrizNula(c);
 	 defineFaseMemLog(1);
-         acessaMatriz(&a);
-         acessaMatriz(&b);
-         acessaMatriz(&c);
-         multiplicaMatrizes(&a,&b,&c);
+         acessaMatriz(a);
+         acessaMatriz(b);
+         acessaMatriz(c);
+         multiplicaMatrizes(a,b,c);
 	 defineFaseMemLog(2);
-         acessaMatriz(&c);
-	 if (regmem) imprimeMatriz(&c);
-         destroiMatriz(&a);
-         destroiMatriz(&b);
-         destroiMatriz(&c);
+         acessaMatriz(c);
+	 if (regmem) imprimeMatriz(c);
+         destroiMatriz(a);
+         destroiMatriz(b);
+         destroiMatriz(c);
 	 break;
     case OPTRANSPOR:
          // cria matriz a aleatoria, que e transposta, impressa e destruida
 	 defineFaseMemLog(0);
-         criaMatriz(&a,optx,opty,0);
-         inicializaMatrizAleatoria(&a);
+         a = criaMatriz(optx,opty,0);
+         inicializaMatrizAleatoria(a);
 	 defineFaseMemLog(1);
-         acessaMatriz(&a);
-	 transpoeMatriz(&a);
+         acessaMatriz(a);
+	 transpoeMatriz(a);
 	 defineFaseMemLog(2);
-         acessaMatriz(&a);
-	 if (regmem) imprimeMatriz(&a);
-         destroiMatriz(&a);
+         acessaMatriz(a);
+	 if (regmem) imprimeMatriz(a);
+         destroiMatriz(a);
 	 break;
    default:
          // nao deve ser executado, pois ha um erroAssert em parse_args
