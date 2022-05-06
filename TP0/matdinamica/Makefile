@@ -28,7 +28,7 @@ EXE = $(BIN)/matop
 all:  mem perf gprof
 
 mem: $(EXE)
-	$(EXE) -s -p /tmp/somalog.out -l -x 4 -y 5
+	$(EXE) -s -p /tmp/somalog.out -l -x 5 -y 5
 	$(EXE) -m -p /tmp/multlog.out -l -x 5 -y 5
 	$(EXE) -t -p /tmp/transplog.out -l -x 5 -y 4
 

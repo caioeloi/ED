@@ -24,8 +24,6 @@ void criaMatriz(mat_tipo * mat, int tx, int ty, int id)
 // Entrada: mat, tx, ty, id
 // Saida: mat
 {
-  mat = (mat_tipo *) malloc(sizeof(mat_tipo));
-    
     erroAssert(mat != NULL, "Erro ao alocar matriz!");
 
     // verifica se os valores de tx e ty são validos
@@ -49,6 +47,7 @@ void criaMatriz(mat_tipo * mat, int tx, int ty, int id)
     // inicializa o identificador da matriz, para rastreamento
     mat->id = id;
 }
+
 
 void inicializaMatrizNula(mat_tipo * mat)
 // Descricao: inicializa mat com valores nulos 
@@ -123,52 +122,6 @@ void imprimeMatriz(mat_tipo * mat)
   }
 }
 
-void escreveElemento(mat_tipo * mat, int x, int y, double v)
-// Descricao: atribui o valor v ao elemento (x,y) de mat
-// Entrada: mat, x, y, v
-// Saida: mat
-{
-  // verifica se x e y sao validos
-  erroAssert((x<0)||(x>=mat->tamx),"Indice invalido");
-  erroAssert((y<0)||(y>=mat->tamy),"Indice invalido");
-
-  mat->m[x][y] = v;
-  ESCREVEMEMLOG((long int)(&(mat->m[x][y])),sizeof(double),mat->id);
-}
-
-double leElemento (mat_tipo * mat, int x, int y)
-// Descricao: retorna o elemento (x,y) de mat 
-// Entrada: mat, x, y
-// Saida: mat[x][y] 
-{
-  // verifica se x e y sao validos
-  erroAssert((x<0)||(x>=mat->tamx),"Indice invalido");
-  erroAssert((y<0)||(y>=mat->tamy),"Indice invalido");
-
-  LEMEMLOG((long int)(&(mat->m[x][y])),sizeof(double),mat->id);
-  return mat->m[x][y];
-}
-
-void copiaMatriz(mat_tipo *src, mat_tipo * dst, int dst_id)
-// Descricao: faz uma copia de src em dst
-// Entrada: src, dst_id
-// Saida: dst
-{
-  int i,j;
-
-  // cria novamente a matriz dst para ajustar as suas dimensoes
-  criaMatriz(dst,src->tamx, src->tamy,dst_id);
-  // inicializa a matriz dst como nula
-  inicializaMatrizNula(dst);
-  // copia os elementos da matriz src
-  for (i=0; i<src->tamx; i++){
-    for(j=0; j<src->tamy; j++){
-      dst->m[i][j] = src->m[i][j];
-      LEMEMLOG((long int)(&(src->m[i][j])),sizeof(double),src->id);
-      ESCREVEMEMLOG((long int)(&(dst->m[i][j])),sizeof(double),dst->id);
-    }
-  }
-}
 
 void somaMatrizes(mat_tipo *a, mat_tipo *b, mat_tipo *c)
 // Descricao: soma as matrizes a e b e armazena o resultado em c
@@ -249,12 +202,11 @@ void destroiMatriz(mat_tipo *a)
 // Saida: a
 {
   // apenas um aviso se a matriz for destruida mais de uma vez
-  avisoAssert(((a->tamx>0)&&(a->tamy>0)),"Matriz já foi destruida");
+    
     
     for (int i = 0; i < a->tamx; i++)
     {
         free(a->m[i]);
     }
     free(a->m);
-    free(a);
 }
