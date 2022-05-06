@@ -18,7 +18,7 @@ typedef struct mat{
 	int id;
 } mat_tipo;
 
-void criaMatriz(mat_tipo * mat, int tx, int ty, int id);
+void criaMatriz(mat_tipo * mat, int tx, int ty);
 void inicializaMatrizNula(mat_tipo * mat);
 double acessaMatriz(mat_tipo * mat);
 void imprimeMatriz(mat_tipo * mat);

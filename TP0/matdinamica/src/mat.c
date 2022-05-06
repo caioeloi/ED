@@ -17,7 +17,7 @@
 // Macro que realiza swap sem variavel auxiliar
 #define ELEMSWAP(x,y) (x+=y,y=x-y,x-=y)
 
-void criaMatriz(mat_tipo * mat, int tx, int ty, int id)
+void criaMatriz(mat_tipo * mat, int tx, int ty)
 // Descricao: cria matriz com dimensoes tx X ty
 // Entrada: mat, tx, ty, id
 // Saida: mat
@@ -42,8 +42,6 @@ void criaMatriz(mat_tipo * mat, int tx, int ty, int id)
     // inicializa as dimensoes da matriz
     mat->tamx = tx;
     mat->tamy = ty;
-    // inicializa o identificador da matriz, para rastreamento
-    mat->id = id;
 }
 
 
