@@ -14,8 +14,6 @@
 #include "memlog.h"
 #include "msgassert.h"
 
-// limite superior da inicializacao aleatoria
-#define INITRANDOMRANGE 10
 // Macro que realiza swap sem variavel auxiliar
 #define ELEMSWAP(x,y) (x+=y,y=x-y,x-=y)
 
@@ -64,22 +62,6 @@ void inicializaMatrizNula(mat_tipo * mat)
   }
 }
 
-void inicializaMatrizAleatoria(mat_tipo * mat)
-// Descricao: inicializa mat com valores aleatorios
-// Entrada: mat 
-// Saida: mat
-{
-  int i, j;
-  // inicializa a matriz com valores nulos, por seguranca
-  inicializaMatrizNula(mat);
-  // inicializa a parte alocada da matriz com valores aleatorios
-  for (i=0; i<mat->tamx; i++){
-    for(j=0; j<mat->tamy; j++){
-      mat->m[i][j] = drand48()*INITRANDOMRANGE;
-      ESCREVEMEMLOG((long int)(&(mat->m[i][j])),sizeof(double),mat->id);
-    }
-  }
-}
 
 double acessaMatriz(mat_tipo * mat)
 // Descricao: acessa mat para fins de registro de acesso 

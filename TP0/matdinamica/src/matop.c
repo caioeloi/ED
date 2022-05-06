@@ -130,13 +130,9 @@ int main(int argc, char ** argv)
   // execucao dependente da operacao escolhida
   switch (opescolhida){
     case OPSOMAR:
-         // cria matrizes a e b aleatorias, que sao somadas para a matriz c
-	 // matriz c é impressa e todas as matrizes sao destruidas
 	 defineFaseMemLog(0);
          criaMatriz(&a,optx,opty,0);
-         inicializaMatrizAleatoria(&a);
          criaMatriz(&b,optx,opty,1);
-         inicializaMatrizAleatoria(&b);
          criaMatriz(&c,optx,opty,2);
          inicializaMatrizNula(&c);
 	 defineFaseMemLog(1);
@@ -156,9 +152,7 @@ int main(int argc, char ** argv)
 	 // matriz c é impressa e todas as matrizes sao destruidas
 	 defineFaseMemLog(0);
          criaMatriz(&a,optx,opty,0);
-         inicializaMatrizAleatoria(&a);
          criaMatriz(&b,opty,optx,1);
-         inicializaMatrizAleatoria(&b);
          criaMatriz(&c,optx,optx,2);
          inicializaMatrizNula(&c);
 	 defineFaseMemLog(1);
@@ -177,7 +171,6 @@ int main(int argc, char ** argv)
          // cria matriz a aleatoria, que e transposta, impressa e destruida
 	 defineFaseMemLog(0);
          criaMatriz(&a,optx,opty,0);
-         inicializaMatrizAleatoria(&a);
 	 defineFaseMemLog(1);
          acessaMatriz(&a);
 	 transpoeMatriz(&a);
