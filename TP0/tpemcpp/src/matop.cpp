@@ -11,7 +11,7 @@ enum OP { SOMAR = 1, MULTIPLICAR, TRANSPOR };
 // Variáveis globais e inicializações para opções
 static int opescolhida = -1;
 memlog ml;
-std::string logNome, outNome, m1Nome, m2Nome;
+string logNome, outNome, m1Nome, m2Nome;
 bool regmem = 0;
 
 // Descrição: imprime as opções de uso
@@ -19,16 +19,16 @@ bool regmem = 0;
 // Saída: impressão das opções de linha de comando
 void uso() {
 
-    std::cerr << "matop\n";
-    std::cerr << "\t-s \t\t(soma matrizes) \n";
-    std::cerr << "\t-m \t\t(multiplica matrizes) \n";
-    std::cerr << "\t-t \t\t(transpõe matriz 1)\n";
-    std::cerr << "\t-o <arq>\t(matriz resultante)\n";
-    std::cerr << "\t-1 <arq>\t(matriz 1)\n";
-    std::cerr << "\t-2 <arq>\t(matriz 2)\n";
-    std::cerr << "\t-p <arq>\t(registro de desempenho)\n";
-    std::cerr << "\t-l \t\t(padrão de acesso e localidade)\n";
-    std::cerr << "\t-h \t\timprime essa mensagem\n";
+    cerr << "matop\n";
+    cerr << "\t-s \t\t(soma matrizes) \n";
+    cerr << "\t-m \t\t(multiplica matrizes) \n";
+    cerr << "\t-t \t\t(transpõe matriz 1)\n";
+    cerr << "\t-o <arq>\t(matriz resultante)\n";
+    cerr << "\t-1 <arq>\t(matriz 1)\n";
+    cerr << "\t-2 <arq>\t(matriz 2)\n";
+    cerr << "\t-p <arq>\t(registro de desempenho)\n";
+    cerr << "\t-l \t\t(padrão de acesso e localidade)\n";
+    cerr << "\t-h \t\timprime essa mensagem\n";
 }
 
 // Descrição: lê as opções da linha de comando e inicializa variáveis
@@ -88,7 +88,7 @@ void parseArgs(int argc, char **argv) {
 // Descrição: conte o número de vezes que c aparece em str
 // Entrada: str,c
 // Saída: número de vezes que c aparece em str
-unsigned countCharStr(const std::string &str, const char c) {
+unsigned countCharStr(const string &str, const char c) {
 
     unsigned n = 0;
     for (char i : str)
@@ -99,50 +99,50 @@ unsigned countCharStr(const std::string &str, const char c) {
 // Descrição: verifica se outras linhas de um arquivo são consistentes
 // Entrada: str
 // Saída: retorna verdadeiro se consisntente e falso caso contrário
-bool isOtherLineValid(const std::string &str) {
+bool isOtherLineValid(const string &str) {
 
     // Esperado: float separados por um único espaço (termina em float)
-    std::regex ex("((-?\\d+\\.?\\d*) )*(-?\\d+\\.?\\d*)");
-    return std::regex_match(str, ex);
+    regex ex("((-?\\d+\\.?\\d*) )*(-?\\d+\\.?\\d*)");
+    return regex_match(str, ex);
 }
 
 // Descrição: verifica se a 1ª linha de um arquivo é consistente
 // Entrada: str
 // Saída: retorna verdadeiro se consisntente e falso caso contrário
-bool isFirstLineValid(const std::string &str) {
+bool isFirstLineValid(const string &str) {
 
     // Esperado: dois inteiros separados por um único espaço
-    std::regex expectedFormat("\\d+\\s\\d+");
-    return std::regex_match(str, expectedFormat);
+    regex expectedFormat("\\d+\\s\\d+");
+    return regex_match(str, expectedFormat);
 }
 
 // Descrição: verifica se um arquivo contendo uma matriz é válido
 // Entrada: string com nome do arquivo
 // Saída: matriz construída a partir do arquivo
-void isFileValid(std::string &matrixName) {
+void isFileValid(string &matrixName) {
 
     // Abre o arquivo
-    std::ifstream inFile;
+    ifstream inFile;
     inFile.open(matrixName);
     erroAssert(inFile.is_open(), "Erro ao abrir arquivo da matriz");
 
     // Teste a validade da primeira linha
-    std::string firstLine;
-    std::getline(inFile, firstLine);
+    string firstLine;
+    getline(inFile, firstLine);
     erroAssert(isFirstLineValid(firstLine),
                "A 1ª linha do arquivo da matriz apresenta inconsistência");
 
     // Variáveis que vão ajudar a verificar o resto
     // Como a primeira linha é válida, podem ser usadas
     unsigned x, y;
-    std::stringstream ss(firstLine);
+    stringstream ss(firstLine);
     ss >> x >> y;
 
     // Teste a validade das outras linhas
     for (int lineCounter = 2;; lineCounter++) {
         // Antes de testar cada linha verifique se o EOF foi atingido
-        std::string line;
-        std::getline(inFile, line);
+        string line;
+        getline(inFile, line);
         if (inFile.eof()) break;
         erroAssert(isOtherLineValid(line),
                    "Linha " << lineCounter
@@ -163,11 +163,11 @@ void isFileValid(std::string &matrixName) {
     inFile.clear(); // Necessário para remover EOFBIT do arquivo
     inFile.seekg(0);
 
-    std::getline(inFile, firstLine); // Ignore a primeira linha
+    getline(inFile, firstLine); // Ignore a primeira linha
     for (unsigned lineCounter = 2;; lineCounter++) {
         // Antes de testar cada linha verifique se o EOF foi atingido
-        std::string line;
-        std::getline(inFile, line);
+        string line;
+        getline(inFile, line);
         if (inFile.eof()) {
             erroAssert(lineCounter == x + 1, "Número de linhas do arquivo da "
                                              "matriz é diferente do esperado");
@@ -187,10 +187,10 @@ void isFileValid(std::string &matrixName) {
 // Descrição: constrói uma matriz a partir de um nome de um arquivo de entrada
 // Entrada: matrixName
 // Saída: matriz construída a partir do arquivo
-matrix matrixBuilder(std::string &matrixName) {
+mat_tipo matrixBuilder(string &matrixName) {
 
     // Abre o arquivo
-    std::ifstream inFile;
+    ifstream inFile;
     inFile.open(matrixName);
     erroAssert(inFile.is_open(), "Erro ao abrir arquivo da matriz");
 
@@ -199,7 +199,7 @@ matrix matrixBuilder(std::string &matrixName) {
     inFile >> x >> y;
 
     // Construa a matriz
-    matrix mat(x, y);
+    mat_tipo mat(x, y);
 
     // Inicialize a matriz e confere se houve algum erro
     for (int i = 0; i < x; ++i) {
@@ -236,7 +236,7 @@ int main(int argc, char **argv) {
     isFileValid(m1Nome);
 
     // interprete arquivo contendo matriz 1
-    matrix a = matrixBuilder(m1Nome);
+    mat_tipo a = matrixBuilder(m1Nome);
 
     // execução dependente da operação escolhida
     switch (opescolhida) {
@@ -244,44 +244,44 @@ int main(int argc, char **argv) {
             // Verifica a integridade do arquivo
             isFileValid(m2Nome);
             // interprete arquivo contendo matriz 2
-            matrix b = matrixBuilder(m2Nome);
+            mat_tipo b = matrixBuilder(m2Nome);
             // cria e imprime uma matriz que é a soma das que foram lidas
             // as matrizes são destrúidas automaticamente pelo destrutor
             ml.defineFaseMemLog(1);
             a.acessaMatriz();
             b.acessaMatriz();
-            matrix c = a + b;
+            mat_tipo c = a + b;
             ml.defineFaseMemLog(2);
             c.acessaMatriz();
-            if (regmem) c.imprimeMatriz(outNome);
+            if (regmem) c.imprimeMatriz();
             break;
         }
         case MULTIPLICAR: {
             // interprete arquivo contendo matriz 2
-            matrix b = matrixBuilder(m2Nome);
+            mat_tipo b = matrixBuilder(m2Nome);
             // cria e imprime uma matriz que é o produto das que foram lidas
             // as matrizes são destrúidas automaticamente pelo destrutor
             ml.defineFaseMemLog(1);
             a.acessaMatriz();
             b.acessaMatriz();
-            matrix c = a * b;
+            mat_tipo c = a * b;
             ml.defineFaseMemLog(2);
             c.acessaMatriz();
-            if (regmem) c.imprimeMatriz(outNome);
+            if (regmem) c.imprimeMatriz();
             break;
         }
         case TRANSPOR: {
             // cria e imprime uma matriz sendo a transposta da matriz lida
             ml.defineFaseMemLog(1);
             a.acessaMatriz();
-            matrix c = a.transpoeMatriz();
+            mat_tipo c = a.transpoeMatriz();
             ml.defineFaseMemLog(2);
             c.acessaMatriz();
-            if (regmem) c.imprimeMatriz(outNome);
+            if (regmem) c.imprimeMatriz();
             break;
         }
         // Não deve chegar aqui
-        default: std::cout << "Here be dragons!\n"; exit(1);
+        default: cout << "Here be dragons!\n"; exit(1);
     }
 
     // Confira se o arquivo de saída atende o formato
