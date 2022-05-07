@@ -6,10 +6,10 @@
 const int SIZE = 2;
 memlog ml;
 
-TEST(matrix, iniciaMatrizNula) {
+TEST(mat_tipo, iniciaMatrizNula) {
 
     // Initicialize matriz
-    matrix x(SIZE, SIZE);
+    mat_tipo x(SIZE, SIZE);
     x.inicializaMatrizNula();
 
     // Assert
@@ -18,15 +18,15 @@ TEST(matrix, iniciaMatrizNula) {
             EXPECT_EQ(0, x.getElement(i, j));
 }
 
-TEST(matrix, somaMatrizes) {
+TEST(mat_tipo, somaMatrizes) {
 
     // Initicialize matrizes e soma
-    matrix x(SIZE, SIZE);
+    mat_tipo x(SIZE, SIZE);
     x.inicializaMatrizNula();
     for (int i = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE; ++j)
             x.setElement(i, j, i * (j + 1));
-    matrix y(SIZE, SIZE);
+    mat_tipo y(SIZE, SIZE);
     y.inicializaMatrizNula();
     for (int i = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE; ++j)
@@ -34,7 +34,7 @@ TEST(matrix, somaMatrizes) {
     const matrix w = x + y;
 
     // Define matriz esperada
-    matrix z(SIZE, SIZE);
+    mat_tipo z(SIZE, SIZE);
     z.inicializaMatrizNula();
     for (int i = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE; ++j)
@@ -46,18 +46,18 @@ TEST(matrix, somaMatrizes) {
             EXPECT_EQ(w.getElement(i, j), z.getElement(i, j));
 }
 
-TEST(matrix, multiplicaMatrizes) {
+TEST(mat_tipo, multiplicaMatrizes) {
 
     // Initicialize matrizes e multiplica
     double xElements[SIZE * SIZE] = {1, 2, 3, 4};
-    matrix x(SIZE, SIZE);
+    mat_tipo x(SIZE, SIZE);
     x.inicializaMatrizNula();
     for (int i = 0, k = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE; ++j, ++k)
             x.setElement(i, j, xElements[k]);
 
     int yElements[SIZE * SIZE] = {5, 6, 7, 8};
-    matrix y(SIZE, SIZE);
+    mat_tipo y(SIZE, SIZE);
     y.inicializaMatrizNula();
     for (int i = 0, k = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE; ++j, ++k)
@@ -67,7 +67,7 @@ TEST(matrix, multiplicaMatrizes) {
 
     // Define matriz esperada
     int zElements[SIZE * SIZE] = {19, 22, 43, 50};
-    matrix z(SIZE, SIZE);
+    mat_tipo z(SIZE, SIZE);
     z.inicializaMatrizNula();
     for (int i = 0, k = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE; ++j, ++k)
@@ -79,20 +79,20 @@ TEST(matrix, multiplicaMatrizes) {
             EXPECT_EQ(w.getElement(i, j), z.getElement(i, j));
 }
 
-TEST(matrix, transpoeMatriz) {
+TEST(mat_tipo, transpoeMatriz) {
 
     const double arr[SIZE][SIZE * SIZE] = {{1, 2, 3, 4}, {5, 6, 7, 8}};
 
     // Initicialize matriz e a transpõe
-    matrix x(SIZE, SIZE * SIZE);
+    mat_tipo x(SIZE, SIZE * SIZE);
     x.inicializaMatrizNula();
     for (int i = 0, k = 0; i < SIZE; ++i)
         for (int j = 0; j < SIZE * SIZE; ++j, ++k)
             x.setElement(i, j, arr[i][j]);
-    matrix xTransp = x.transpoeMatriz();
+    mat_tipo xTransp = x.transpoeMatriz();
 
     // Define matriz esperada
-    matrix expect(SIZE * SIZE, SIZE);
+    mat_tipo expect(SIZE * SIZE, SIZE);
     expect.inicializaMatrizNula();
     for (int i = 0, k = 0; i < SIZE * SIZE; ++i)
         for (int j = 0; j < SIZE; ++j, ++k)
