@@ -1,14 +1,17 @@
 #ifndef LISTA_H
 #define LISTA_H
 #include <iostream>
+#include <string>
+#include "Carta.h"
+
 using namespace std;
 
 class TipoCelula
 {
     public:
-        TipoCelula(char valor);
+        TipoCelula(Carta valor);
     private:
-        char item;
+        Carta item;
         TipoCelula *prox;
     
     friend class Lista;
@@ -19,12 +22,12 @@ class Lista
 {
 public:
     Lista();
-    ~Lista();
     int tamanho = 0;
-    void InsereInicio(const char item);
-    void InsereFinal(const char item);
-    char Remove(const char carta);
-    char RemovePosicao(int pos);
+    Carta GetItem(int pos);
+    void InsereInicio(const Carta item);
+    void InsereFinal(const Carta item);
+    Carta Remove(const Carta carta);
+    Carta RemovePosicao(int pos);
     void Limpa();
     void Imprime();
 

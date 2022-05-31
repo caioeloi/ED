@@ -1,22 +1,20 @@
 #include "Lista.h"
+#include "Carta.h"
 
-TipoCelula::TipoCelula(char valor){
+TipoCelula::TipoCelula(Carta valor){
     this->item = valor;
     this->prox = nullptr;
 }
 
 Lista::Lista()
 {
-    topo = new TipoCelula('1');
+    Carta aux;
+    topo = new TipoCelula(aux);
     ultimo = topo;
 
 }
 
-Lista::~Lista()
-{
-    Limpa();
-    delete topo;
-}
+
 
 TipoCelula* Lista::Posiciona(int pos, bool antes=false){
     TipoCelula *p; int i;
@@ -35,9 +33,7 @@ TipoCelula* Lista::Posiciona(int pos, bool antes=false){
 }
 
 
-
-
-void Lista::InsereInicio(const char item)
+void Lista::InsereInicio(const Carta item)
 {
     TipoCelula *nova;
     nova = new TipoCelula(item);
@@ -49,7 +45,7 @@ void Lista::InsereInicio(const char item)
         ultimo = nova;
 }
 
-void Lista::InsereFinal(const char item)
+void Lista::InsereFinal(const Carta item)
 {
     TipoCelula *nova;
     nova = new TipoCelula(item);
@@ -59,13 +55,13 @@ void Lista::InsereFinal(const char item)
     tamanho++;
 };
 
-char Lista::Remove(char carta){;
-    char aux;
+Carta Lista::Remove(Carta carta){;
+    Carta aux;
     TipoCelula *current = topo;
     TipoCelula *previous = nullptr;
 
     while (current != nullptr){
-        if (current->item == carta){
+        if (current->item.naipe == carta.naipe && current->item.numero == carta.numero){
             if(previous == nullptr){
                 topo = current->prox;
             }
@@ -82,12 +78,13 @@ char Lista::Remove(char carta){;
         previous = current;
         current = current->prox;
     }
+    this->tamanho--;
     return aux;
 }
 
 
-char Lista::RemovePosicao(int pos) {;
-    char aux;
+Carta Lista::RemovePosicao(int pos) {;
+    Carta aux;
     TipoCelula *p, *q;
     if (tamanho == 0)
         throw "ERRO: Lista vazia!";
@@ -104,31 +101,12 @@ char Lista::RemovePosicao(int pos) {;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void Lista::Imprime() {
     TipoCelula *p;
     p = topo->prox;
     while (p!=nullptr) {
-        cout << p->item << " ";
+        p->item.Imprime();
+        cout << endl;
         p = p->prox;
     }
     cout << endl;
@@ -145,4 +123,12 @@ void Lista::Limpa() {
     }
     ultimo = topo;
     tamanho = 0;
+    delete(this->topo);
 };
+
+
+Carta Lista::GetItem(int pos){
+    TipoCelula *p;
+    p = Posiciona(pos);
+    return p->item;
+}
