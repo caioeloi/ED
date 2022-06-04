@@ -60,7 +60,7 @@ void Pessoa::ordenaCartas(){
 
 }
 
-string Pessoa::getJogada(){
+void Pessoa::setJogada(){
 
     int tamaux = this->cartas.tamanho;
     int vet[tamaux];
@@ -69,46 +69,48 @@ string Pessoa::getJogada(){
     if (this->cartas.GetItem(1).numero == 1 && this->cartas.GetItem(2).numero == 10 && this->cartas.GetItem(3).numero == 11 && this->cartas.GetItem(4).numero == 12 && this->cartas.GetItem(5).numero == 13 && this->cartas.GetItem(1).naipe == this->cartas.GetItem(2).naipe && this->cartas.GetItem(1).naipe == this->cartas.GetItem(3).naipe && this->cartas.GetItem(1).naipe == this->cartas.GetItem(4).naipe && this->cartas.GetItem(1).naipe == this->cartas.GetItem(5).naipe)
     {
         this->jogada = "RSF";
-        return "RSF";
     }
     else if (this->cartas.GetItem(2).numero == this->cartas.GetItem(1).numero + 1 && this->cartas.GetItem(3).numero == this->cartas.GetItem(1).numero + 2 && this->cartas.GetItem(4).numero == this->cartas.GetItem(1).numero + 3 && this->cartas.GetItem(5).numero == this->cartas.GetItem(1).numero + 4 && this->cartas.GetItem(1).naipe == this->cartas.GetItem(2).naipe && this->cartas.GetItem(1).naipe == this->cartas.GetItem(3).naipe && this->cartas.GetItem(1).naipe == this->cartas.GetItem(4).naipe && this->cartas.GetItem(1).naipe == this->cartas.GetItem(5).naipe)
     {
         this->jogada = "SF";
-        return "SF";
+        
     }
     else if ()
     {
         return "FK";
     }
-    else if (/* condition */)
-    {
-        return "FH";
-    }
-    else if (/* condition */)
-    {
-        return "F";
-    }
-    else if (/* condition */)
-    {
-        return "S";
-    }
-    else if (/* condition */)
-    {
-        return "TK";
-    }
-    else if (/* condition */)
-    {
-        return "TP";
-    }
-    else if (/* condition */)
-    {
-        return "OP";
+    // else if (/* condition */)
+    // {
+    //     return "FH";
+    // }
+    // else if (/* condition */)
+    // {
+    //     return "F";
+    // }
+    // else if (/* condition */)
+    // {
+    //     return "S";
+    // }
+    // else if (/* condition */)
+    // {
+    //     return "TK";
+    // }
+    // else if (/* condition */)
+    // {
+    //     return "TP";
+    // }
+    // else if (/* condition */)
+    // {
+    //     return "OP";
 
-    }else{
-        return "HC";
-    }
+    // }else{
+    //     return "HC";
+    // }
     
-    
+}
 
+string Pessoa::getJogada(){
+
+    return this->jogada;
 }
 

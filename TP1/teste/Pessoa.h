@@ -18,6 +18,7 @@ public:
     int getSaldo() const;
     void setSaldo(const int saldo);
     Lista cartas;
+    void setJogada();
     string getJogada();
     void ordenaCartas();
     
