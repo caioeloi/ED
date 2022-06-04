@@ -9,17 +9,17 @@ using namespace std;
 class Pessoa
 {
 private:
-    int saldo;
-    int valorjogada;
+    int saldo = 0;
+    int valorjogada = 0;
     string jogada;
 public:
-    Pessoa(const string& nome, const int saldo);
     //~Pessoa();
     string nome;
     int getSaldo() const;
     void setSaldo(const int saldo);
     Lista cartas;
     void setJogada();
+    int aposta = 0;
 
 
     bool RoyalStraightFlush();
