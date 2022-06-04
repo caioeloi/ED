@@ -10,6 +10,7 @@ class Pessoa
 {
 private:
     int saldo;
+    int valorjogada;
     string jogada;
 public:
     Pessoa(const string& nome, const int saldo);
@@ -19,6 +20,21 @@ public:
     void setSaldo(const int saldo);
     Lista cartas;
     void setJogada();
+
+
+    bool RoyalStraightFlush();
+    bool StraightFlush();
+    bool FourOfAKind();
+    bool FullHouse();
+    bool Flush();
+    bool Straight();
+    bool ThreeOfAKind();
+    bool TwoPairs();
+    bool OnePair();
+    bool HighCard();
+
+
+    int getValorJogada();
     string getJogada();
     void ordenaCartas();
     
