@@ -102,6 +102,8 @@ Carta Lista::RemovePosicao(int pos) {;
 
 
 void Lista::Imprime() {
+    if (tamanho == 0)
+        throw "ERRO: Lista vazia!";
     TipoCelula *p;
     p = topo->prox;
     while (p!=nullptr) {
@@ -123,7 +125,6 @@ void Lista::Limpa() {
     }
     ultimo = topo;
     tamanho = 0;
-    delete(this->topo);
 };
 
 
