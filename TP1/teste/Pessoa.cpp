@@ -231,7 +231,13 @@ bool Pessoa::OnePair(){
 
 
 void Pessoa::setJogada(){
-    if (this->RoyalStraightFlush())
+    if (this->cartas.tamanho == 0)
+    {
+        this->valorjogada = 0;
+        this->jogada = "none";
+    }
+    
+    else if (this->RoyalStraightFlush())
     {
         this->valorjogada = 10;
         this->jogada = "RSF";

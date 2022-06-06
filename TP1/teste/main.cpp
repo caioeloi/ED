@@ -1,11 +1,9 @@
 #include <iostream>
 #include <regex>
-#include <sstream>
-#include <unistd.h>
 #include <fstream>
 #include "Pessoa.h"
 #include "msgassert.h"
-
+#define Troca(A, B) {Pessoa c = A; A = B; B = c; }
 
 bool isFirstLineValid(const string &str) {
 
@@ -30,6 +28,100 @@ void isFileValid(string &nomeArq){
     arq.close();
 
 }
+
+
+
+void determinaVencedor(Pessoa *jogadores, int numJogadores, int pote){
+    int i = 0;
+    int j = 0;
+    int melhorMao = 0;
+    int aux = 0;
+
+    for ( i = 0; i < numJogadores; i++)
+    {
+        aux = jogadores[i].getValorJogada();
+        if (aux > melhorMao)
+        {
+            melhorMao = aux;
+        }
+    }
+    Pessoa retorno[numJogadores];
+    int iterator = 0;
+
+
+    for ( i = 0; i < numJogadores; i++)
+    {
+        if (jogadores[i].getValorJogada() == melhorMao)
+        {
+            retorno[iterator] = jogadores[i];
+            iterator++;
+        }
+        
+    }
+    float ganhos = (float)(pote / iterator);
+    
+    for ( i = 0; i < iterator; i++)
+    {
+        retorno[i].setSaldo(retorno[i].getSaldo() + ganhos);
+        
+    }
+    
+    string nomeaux;
+    for ( i = 0; i < numJogadores; i++)
+    {
+        nomeaux = jogadores[i].nome;
+        for ( j = 0; j < iterator; j++)
+        {
+            if (nomeaux == retorno[j].nome)
+            {
+                jogadores[i] = retorno[j];
+            }
+            
+        }
+        
+    }
+    
+    cout << iterator << " " << pote << " " << retorno[0].getJogada() << endl;
+
+    for ( i = 0; i < iterator; i++)
+    {
+        cout << retorno[i].nome << endl;
+    }
+    
+    
+
+    
+
+}
+
+
+
+
+void ordenaJogadores(Pessoa *jogadores, int numJogadores){
+    int i, j, Min;
+    for (i = 0; i < numJogadores - 1; i++)
+    {
+        Min = i;
+        for (j = i + 1 ; j < numJogadores; j++)
+        {
+            if (jogadores[j].getSaldo() > jogadores[Min].getSaldo())
+                Min = j;
+        }
+        Troca(jogadores[i], jogadores[Min]);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJogada, int saldoInicial){
     // variaveis de montagem
@@ -74,20 +166,36 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
             }
             jogadores[i].ordenaCartas();
             jogadores[i].setJogada();
-
-            
+ 
         }
+
+        determinaVencedor(jogadores, numJogadores, pote);
+
         
         // limpa as cartas depois de tudo...
         for ( i = 0; i < numJogadores; i++)
         {
             jogadores[i].cartas.Limpa();
+            jogadores[i].setJogada();
         }
         
 
 
     }else{
         arq >> jogadoresRodada >> pingo;
+        pote += pingo * numJogadores;
+        int saldoaux = 0;
+        for ( i = 0; i < numJogadores; i++)
+        {
+            saldoaux = jogadores[i].getSaldo();
+            if (saldoaux >= pingo)
+            {
+                jogadores[i].setSaldo(saldoaux - pingo);
+            }
+            
+            
+        }
+        
 
         Pessoa pessoasRodada[jogadoresRodada];
         int achou = 0;
@@ -101,6 +209,8 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
                 {
                     pessoasRodada[i] = jogadores[j];
                     arq >> pessoasRodada[i].aposta;
+                    pote += pessoasRodada[i].aposta;
+                    pessoasRodada[i].setSaldo(pessoasRodada[i].getSaldo() - pessoasRodada[i].aposta);
 
                     for (k = 0; k < 5; k++)
                     {
@@ -122,6 +232,8 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
                         }
                         jogadores[j] = pessoasRodada[i];
                     }
+                    jogadores[j].ordenaCartas();
+                    jogadores[j].setJogada();
                     achou++;
                     break;
                 }
@@ -133,7 +245,22 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
             }
 
         }
-
+        determinaVencedor(jogadores, numJogadores, pote);
+        // limpa as cartas depois de tudo...
+        for ( i = 0; i < numJogadores; i++)
+        {
+            for (j = 0; j < jogadoresRodada; j++)
+            {
+                if (jogadores[i].nome == pessoasRodada[j].nome)
+                {
+                    jogadores[i].cartas.Limpa();
+                    jogadores[i].setJogada();
+                }
+                
+            }
+ 
+            
+        }
         
         
 
@@ -171,36 +298,35 @@ int main(int argc, char const *argv[])
     Pessoa jogadores[numJogadores];
 
 
+
+
     for ( i = 0; i < numRodadas; i++)
     {
         realizaRodada(jogadores, arq, numJogadores, numJogada, saldoInicial);
         numJogada++;
     }
 
+
+    cout << endl << "####" << endl;
+
+    ordenaJogadores(jogadores, numJogadores);
+
     for ( i = 0; i < numJogadores; i++)
     {
         cout << jogadores[i].nome << " " << jogadores[i].getSaldo() << endl;
-        jogadores[i].cartas.Imprime();
-
     }
+
     
     
     
+
+
+
+
+
+
+
     
-
-
-
-
-
-
-
-    // for ( i = 0; i < numJogadores; i++)
-    // {
-    //     if (jogadores[i].getValorJogada() >= melhorMao)
-    //     {
-    //         melhorMao = i;
-    //     }
-    // }
 
     // jogadores[melhorMao].setSaldo(jogadores[melhorMao].getSaldo() + pote);
     // cout << 1 << " " << pote << " " << jogadores[melhorMao].getJogada() << endl;
