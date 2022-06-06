@@ -20,8 +20,7 @@ public:
     Lista cartas;
     void setJogada();
     int aposta = 0;
-
-
+    
     bool RoyalStraightFlush();
     bool StraightFlush();
     bool FourOfAKind();
@@ -33,13 +32,10 @@ public:
     bool OnePair();
     bool HighCard();
 
-
     int getValorJogada();
     string getJogada();
     void ordenaCartas();
     
 };
-
-
 
 #endif

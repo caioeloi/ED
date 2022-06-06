@@ -114,15 +114,6 @@ void ordenaJogadores(Pessoa *jogadores, int numJogadores){
 
 
 
-
-
-
-
-
-
-
-
-
 void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJogada, int saldoInicial){
     // variaveis de montagem
     int i = 0;
@@ -316,44 +307,7 @@ int main(int argc, char const *argv[])
         cout << jogadores[i].nome << " " << jogadores[i].getSaldo() << endl;
     }
 
-    
-    
-    
-
-
-
-
-
-
-
-    
-
-    // jogadores[melhorMao].setSaldo(jogadores[melhorMao].getSaldo() + pote);
-    // cout << 1 << " " << pote << " " << jogadores[melhorMao].getJogada() << endl;
-    // pote = 0; 
-    
-    
-   
-    
-
-
-    
-    
-    
-
-    
-
-    // for (i = 0; i < numRodadas -1; i++)
-    // {
-        
-    // }
-    
-
-
     arq.close();
 
-
-
-    
     return 0;
 }

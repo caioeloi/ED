@@ -55,33 +55,6 @@ void Lista::InsereFinal(const Carta item)
     tamanho++;
 };
 
-Carta Lista::Remove(Carta carta){;
-    Carta aux;
-    TipoCelula *current = topo;
-    TipoCelula *previous = nullptr;
-
-    while (current != nullptr){
-        if (current->item.naipe == carta.naipe && current->item.numero == carta.numero){
-            if(previous == nullptr){
-                topo = current->prox;
-            }
-            else if(current->prox == nullptr){
-                previous->prox = nullptr;
-                
-            }else{
-                previous->prox = current->prox;
-                delete current;
-            }
-            return aux;
-        }
-
-        previous = current;
-        current = current->prox;
-    }
-    this->tamanho--;
-    return aux;
-}
-
 
 Carta Lista::RemovePosicao(int pos) {;
     Carta aux;
@@ -99,20 +72,6 @@ Carta Lista::RemovePosicao(int pos) {;
         ultimo = p;
     return aux;
 }
-
-
-void Lista::Imprime() {
-    if (tamanho == 0)
-        throw "ERRO: Lista vazia!";
-    TipoCelula *p;
-    p = topo->prox;
-    while (p!=nullptr) {
-        p->item.Imprime();
-        cout << endl;
-        p = p->prox;
-    }
-    cout << endl;
-};
 
 
 void Lista::Limpa() {

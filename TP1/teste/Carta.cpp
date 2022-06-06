@@ -1,9 +1,6 @@
 #include "Carta.h"
 
 
-void Carta::Imprime(){
-    std::cout << this->numero << " " << this->naipe;
-}
 
 bool operator == (const Carta &lhs, const Carta &rhs) {
     if (lhs.naipe == rhs.naipe && lhs.numero == lhs.numero)

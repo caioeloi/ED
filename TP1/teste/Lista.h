@@ -26,17 +26,14 @@ public:
     Carta GetItem(int pos);
     void InsereInicio(const Carta item);
     void InsereFinal(const Carta item);
-    Carta Remove(const Carta carta);
     Carta RemovePosicao(int pos);
     void Limpa();
-    void Imprime();
 
 private:
     TipoCelula* topo = nullptr;
     TipoCelula* ultimo = nullptr;
     TipoCelula* Posiciona(int pos, bool antes);
 };
-
 
 
 #endif
