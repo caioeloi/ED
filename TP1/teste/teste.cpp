@@ -1,18 +1,17 @@
 #include <iostream>
-#include <regex>
-#include <sstream>
-#include <unistd.h>
 #include <fstream>
 #include <string>
-#include "Pessoa.h"
 
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    Pessoa aux[10];
-    aux[0].nome = "Caio";
-    cout << aux[0].nome << endl;
+    ofstream fout("teste1.txt");
+    string saida = "Ola";
+    saida += "\ntudo bem?";
+    int saldo = 123;
+    saida += to_string(saldo);
+    fout << saida;
 
 
 }

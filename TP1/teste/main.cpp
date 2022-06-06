@@ -31,11 +31,19 @@ void isFileValid(string &nomeArq){
 
 
 
-void determinaVencedor(Pessoa *jogadores, int numJogadores, int pote){
+void determinaVencedor(Pessoa *jogadores, int numJogadores, int pote, string& saida){
     int i = 0;
     int j = 0;
     int melhorMao = 0;
     int aux = 0;
+    float ganhos = 0.0;
+    int contador = 0;
+    string nomeaux;
+    Pessoa ganhadora;
+    Carta highcard;
+    Carta reserva;
+    Pessoa retorno[numJogadores];
+    int iterator = 0;
 
     for ( i = 0; i < numJogadores; i++)
     {
@@ -45,8 +53,7 @@ void determinaVencedor(Pessoa *jogadores, int numJogadores, int pote){
             melhorMao = aux;
         }
     }
-    Pessoa retorno[numJogadores];
-    int iterator = 0;
+    
 
 
     for ( i = 0; i < numJogadores; i++)
@@ -58,35 +65,133 @@ void determinaVencedor(Pessoa *jogadores, int numJogadores, int pote){
         }
         
     }
-    float ganhos = (float)(pote / iterator);
-    
-    for ( i = 0; i < iterator; i++)
+
+
+    if (iterator == 1)
     {
-        retorno[i].setSaldo(retorno[i].getSaldo() + ganhos);
-        
+        retorno[0].setSaldo(retorno[0].getSaldo() + pote);
+        for ( i = 0; i < numJogadores; i++)
+        {
+            nomeaux = jogadores[i].nome;
+            if (nomeaux == retorno[0].nome)
+            {
+                jogadores[i] = retorno[0];
+            }
+
+        }
+        saida += "1 " + to_string(pote) + " " + retorno[0].getJogada() + "\n" + retorno[0].nome + "\n";
+
     }
     
-    string nomeaux;
-    for ( i = 0; i < numJogadores; i++)
+
+    else if (iterator > 1)
     {
-        nomeaux = jogadores[i].nome;
-        for ( j = 0; j < iterator; j++)
+        highcard.numero = 1;
+        for ( i = 0; i < iterator; i++)
         {
-            if (nomeaux == retorno[j].nome)
+            reserva = retorno[i].cartas.GetItem(1);
+            if (reserva > highcard)
             {
-                jogadores[i] = retorno[j];
+                highcard = reserva;
             }
             
         }
-        
+
+        for ( i = 0; i < iterator; i++)
+        {
+            reserva = retorno[i].cartas.GetItem(1);
+            if (reserva.numero == highcard.numero)
+            {
+                contador++;
+            }
+            
+        }
+        if (contador == 1)
+        {
+            for ( i = 0; i < iterator; i++)
+            {
+                reserva = retorno[i].cartas.GetItem(1);
+                if (reserva.numero == highcard.numero)
+                {
+                    ganhadora = retorno[i];
+                }
+            
+            }
+            ganhadora.setSaldo(ganhadora.getSaldo() + pote);
+            for ( i = 0; i < numJogadores; i++)
+            {
+                nomeaux = jogadores[i].nome;
+                if (nomeaux == ganhadora.nome)
+                {
+                    jogadores[i] = ganhadora;
+                    break;
+                }
+
+            }
+            saida += "1 " + to_string(pote) + " " + ganhadora.getJogada() + "\n" + ganhadora.nome + "\n";
+            
+
+        }else{
+            Pessoa ganhadores[contador];
+            int posicao = 0;
+            for ( i = 0; i < contador; i++)
+            {
+                if (retorno[i].cartas.GetItem(1).numero == highcard.numero)
+                {
+                    ganhadores[posicao] = retorno[i];
+                    posicao++;
+                    if (posicao == contador)
+                    {
+                        break;
+                    }
+                    
+                }
+                
+            }
+
+            ganhos = (float)(pote / contador);
+
+            for ( i = 0; i < contador; i++)
+            {
+                ganhadores[i].setSaldo(ganhadores[i].getSaldo() + ganhos);
+            }
+            for ( i = 0; i < numJogadores; i++)
+            {
+                nomeaux = jogadores[i].nome;
+                for ( j = 0; j < contador; j++)
+                {
+                    if (nomeaux == ganhadores[j].nome)
+                    {
+                        jogadores[i] = ganhadores[j];
+                    }
+                    
+                }
+
+            }
+            saida += to_string(iterator) + " " + to_string(pote) + " " + retorno[0].getJogada() + "\n";
+
+            for ( i = 0; i < contador; i++)
+            {
+                saida += ganhadores[i].nome + "\n";
+                
+            }
+
+        }
+          
+
     }
     
-    cout << iterator << " " << pote << " " << retorno[0].getJogada() << endl;
 
-    for ( i = 0; i < iterator; i++)
-    {
-        cout << retorno[i].nome << endl;
-    }
+
+
+
+
+
+
+
+
+
+    
     
     
 
@@ -114,7 +219,7 @@ void ordenaJogadores(Pessoa *jogadores, int numJogadores){
 
 
 
-void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJogada, int saldoInicial){
+void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJogada, int saldoInicial, string& saida){
     // variaveis de montagem
     int i = 0;
     int j = 0;
@@ -160,7 +265,7 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
  
         }
 
-        determinaVencedor(jogadores, numJogadores, pote);
+        determinaVencedor(jogadores, numJogadores, pote, saida);
 
         
         // limpa as cartas depois de tudo...
@@ -236,7 +341,7 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
             }
 
         }
-        determinaVencedor(jogadores, numJogadores, pote);
+        determinaVencedor(jogadores, numJogadores, pote, saida);
         // limpa as cartas depois de tudo...
         for ( i = 0; i < numJogadores; i++)
         {
@@ -289,24 +394,30 @@ int main(int argc, char const *argv[])
     Pessoa jogadores[numJogadores];
 
 
-
+    string saida;
 
     for ( i = 0; i < numRodadas; i++)
     {
-        realizaRodada(jogadores, arq, numJogadores, numJogada, saldoInicial);
+        realizaRodada(jogadores, arq, numJogadores, numJogada, saldoInicial, saida);
         numJogada++;
     }
 
 
     cout << endl << "####" << endl;
+    saida += "####\n";
+
 
     ordenaJogadores(jogadores, numJogadores);
 
-    for ( i = 0; i < numJogadores; i++)
+    for ( i = 0; i < numJogadores - 1; i++)
     {
-        cout << jogadores[i].nome << " " << jogadores[i].getSaldo() << endl;
+        
+        saida += jogadores[i].nome + " " + to_string(jogadores[i].getSaldo()) + "\n";
     }
-
+    saida += jogadores[i].nome + " " + to_string(jogadores[i].getSaldo());
+    cout << saida << endl;
+    ofstream fout("teste1.txt");
+    fout << saida;
     arq.close();
 
     return 0;
