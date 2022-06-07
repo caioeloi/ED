@@ -1,5 +1,5 @@
 2 1000 S
-Giovanni
+Giovanni Luca
 Gisele
 1 800 OP
 Wagner
@@ -8,6 +8,6 @@ Gisele
 ####
 Gisele 1550
 Wagner 1350
-Giovanni 1050
+Giovanni Luca 1050
 John 600
 Thiago 450

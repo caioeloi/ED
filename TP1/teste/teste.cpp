@@ -6,12 +6,22 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    ofstream fout("teste1.txt");
-    string saida = "Ola";
-    saida += "\ntudo bem?";
-    int saldo = 123;
-    saida += to_string(saldo);
-    fout << saida;
+    ifstream arq;
+    arq.open("teste.txt");
+    string nome;
+    string contarq;
+    arq >> nome;
+
+    arq >> contarq;
+    if (!isdigit(contarq[0]))
+    {
+        nome += " " + contarq;
+    }
+    
+  
+    cout << nome << endl;
+    arq.close();
+
 
 
 }

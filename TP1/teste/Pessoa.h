@@ -13,7 +13,6 @@ private:
     int valorjogada = 0;
     string jogada;
 public:
-    //~Pessoa();
     string nome;
     int getSaldo() const;
     void setSaldo(const int saldo);

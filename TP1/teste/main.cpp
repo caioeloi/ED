@@ -230,7 +230,7 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
     int pote = 0;
     int jogadoresRodada = 0;
     Pessoa jogadorAux;
-
+    string arqcont;
     // se for a primeira rodada...
     if (numJogada == 1)
     {
@@ -238,9 +238,20 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
         for (i = 0; i < numJogadores; i++)
         {
             jogadores[i].setSaldo(saldoInicial);
-            arq >> jogadores[i].nome >> jogadores[i].aposta;
+            arq >> jogadores[i].nome >> arqcont;
+
+            while(!isdigit(arqcont[0]))
+            {
+                jogadores[i].nome += " " + arqcont;
+                arq >> arqcont;
+            }
+            
+            
+            jogadores[i].aposta = stoi(arqcont);
             pote += jogadores[i].aposta + pingo;
+            
             jogadores[i].setSaldo(jogadores[i].getSaldo() - jogadores[i].aposta - pingo);
+            
             for (j = 0; j < 5; j++)
             {
                 arq >> cartageral;
@@ -286,7 +297,9 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
             saldoaux = jogadores[i].getSaldo();
             if (saldoaux >= pingo)
             {
+                
                 jogadores[i].setSaldo(saldoaux - pingo);
+                
             }
             
             
@@ -298,13 +311,19 @@ void realizaRodada(Pessoa *jogadores, ifstream& arq, int numJogadores, int numJo
 
         for ( i = 0; i < jogadoresRodada; i++)
         {
-            arq >> jogadorAux.nome;
+            arq >> jogadorAux.nome >> arqcont;
+            while (!isdigit(arqcont[0]))
+            {
+                jogadorAux.nome += " " + arqcont;
+                arq >> arqcont;
+            }
+
             for ( j = 0; j < numJogadores; j++)
             {
                 if (jogadores[j].nome == jogadorAux.nome)
                 {
                     pessoasRodada[i] = jogadores[j];
-                    arq >> pessoasRodada[i].aposta;
+                    pessoasRodada[i].aposta = stoi(arqcont);
                     pote += pessoasRodada[i].aposta;
                     pessoasRodada[i].setSaldo(pessoasRodada[i].getSaldo() - pessoasRodada[i].aposta);
 
@@ -403,7 +422,6 @@ int main(int argc, char const *argv[])
     }
 
 
-    cout << endl << "####" << endl;
     saida += "####\n";
 
 
@@ -415,7 +433,6 @@ int main(int argc, char const *argv[])
         saida += jogadores[i].nome + " " + to_string(jogadores[i].getSaldo()) + "\n";
     }
     saida += jogadores[i].nome + " " + to_string(jogadores[i].getSaldo());
-    cout << saida << endl;
     ofstream fout("teste1.txt");
     fout << saida;
     arq.close();
