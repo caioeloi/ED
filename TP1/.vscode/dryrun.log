@@ -1,0 +1,9 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/caiozec/UFMG/ED/TP1'
+g++ -Wall -c -Iinclude -g -o obj/main.o src/main.cpp
+g++ -Wall -c -Iinclude -g -o obj/Lista.o src/Lista.cpp
+g++ -Wall -c -Iinclude -g -o obj/Carta.o src/Carta.cpp
+g++ -Wall -c -Iinclude -g -o obj/Pessoa.o src/Pessoa.cpp
+g++ -o bin/main obj/main.o obj/Lista.o obj/Carta.o obj/Pessoa.o -lm
+make: Leaving directory '/home/caiozec/UFMG/ED/TP1'
+ 

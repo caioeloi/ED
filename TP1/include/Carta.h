@@ -1,21 +1,22 @@
 #ifndef CARTA_H
 #define CARTA_H
 
-#include <string>
+#include <iostream>
 using namespace std;
+
 
 class Carta
 {
-private:
-    /* data */
+
 public:
-    Carta(const string& naipe, const int numero);
+    Carta(){};
     int numero;
-    string naipe;
-    //~Carta();
+    char naipe;
+    friend bool operator < (Carta& c1, Carta& c2);
+    friend bool operator > (Carta& c1, Carta& c2);
+    
 };
 
-
-
+bool operator == (const Carta &lhs, const Carta &rhs);
 
 #endif
