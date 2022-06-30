@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 13 19:30:04 2022
+# Make data base, printed on Tue Jun 14 09:48:19 2022
 
 # Variables
 
@@ -15,7 +15,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # makefile (from 'makefile', line 10)
@@ -39,7 +39,7 @@ SHELL = /bin/sh
 # makefile (from 'makefile', line 12)
 BIN = bin
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"74ce6549a467d1dfaba55fb5394742c9.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"f21b5a1399e4b57b69c8e2cd957b5453.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/f21b5a1399e4b57b69c8e2cd957b5453.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/f21b5a1399e4b57b69c8e2cd957b5453.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/f21b5a1399e4b57b69c8e2cd957b5453.pt-br/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/f21b5a1399e4b57b69c8e2cd957b5453.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /home/caiozec/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/node
 # makefile (from 'makefile', line 15)
@@ -67,9 +67,7 @@ PATH = /home/caiozec/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-30406d75-562a-4b5d-828c-41a3611f541d.sock
-# environment
-VSCODE_SERVER_TAR = /mnt/c/Users/LOJAIN~1/AppData/Local/Temp/vscode-remote-wsl/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/vscode-server-stable-linux-x64.tar.gz
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-add62cf6-0e55-429a-b886-db557fe8afb4.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -83,7 +81,7 @@ PWD = /home/caiozec/UFMG/ED/TP1
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/12_interop
+WSL_INTEROP = /run/WSL/11_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -93,7 +91,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = caiozec
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -169,7 +167,7 @@ WSL_DISTRO_NAME = Ubuntu
 # environment
 MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=79/1024=8%, Rehash=0, Collisions=16/148=11%
+# Load=78/1024=8%, Rehash=0, Collisions=16/147=11%
 
 # Pattern-specific Variable Values
 
@@ -177,9 +175,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2064, inode 53663): 10 files, no impossibilities.
+# . (device 2064, inode 53663): 8 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -282,6 +280,7 @@ include/msgassert.h:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-06 18:52:13.9013265
 #  File has been updated.
+ 
 #  Successfully updated.
 
 # Not a target:
@@ -296,13 +295,12 @@ clean:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 39):
- 
 	rm -r $(BIN)/* $(OBJ)/*
 
 # Not a target:
 src/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 21:12:46.2113522
+#  Last modified 2022-06-13 19:30:12.662953915
 #  File has been updated.
 #  Successfully updated.
 
@@ -343,12 +341,12 @@ obj/Pessoa.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 303 B / avg = 10 B
-# current buf: size = 8162 B / used = 303 B / count = 29 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 285 B / avg = 10 B
+# current buf: size = 8162 B / used = 285 B / count = 27 / avg = 10 B
 
-# strcache performance: lookups = 59 / hit rate = 50%
+# strcache performance: lookups = 57 / hit rate = 52%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/59=2%
-# Finished Make data base on Mon Jun 13 19:30:04 2022
+# Load=27/8192=0%, Rehash=0, Collisions=1/57=2%
+# Finished Make data base on Tue Jun 14 09:48:19 2022
 
  
