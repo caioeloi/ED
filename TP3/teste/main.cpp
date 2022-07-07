@@ -1,7 +1,5 @@
 #include <iostream>
-#include <Lista.h>
-
-
+#include <HashLE.h>
 
 int main(int argc, char const *argv[])
 {

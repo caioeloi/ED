@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'include/Lista.h', needed by 'obj/main.o'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul  7 18:32:48 2022
+# Make data base, printed on Thu Jul  7 18:29:35 2022
 
 # Variables
 
@@ -18,26 +20,40 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
 # default
 .SHELLFLAGS := -c
+# makefile (from 'makefile', line 10)
+OBJ = obj
+# makefile (from 'makefile', line 9)
+SRC = src
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
+# makefile (from 'makefile', line 17)
+EXE = $(BIN)/main
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /home/caiozec/UFMG/ED
+CURDIR := /home/caiozec/UFMG/ED/TP3
 # makefile
 SHELL = /bin/sh
+# makefile (from 'makefile', line 12)
+BIN = bin
 # environment
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /home/caiozec/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/node
-# makefile
-MAKEFILE_LIST := 
+# makefile (from 'makefile', line 15)
+CFLAGS = -Wall -c -I$(INC) -g
+# makefile (from 'makefile', line 14)
+HDRS = $(INC)/Lista.h $(INC)/Pessoa.h $(INC)/Carta.h $(INC)/msgassert.h
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
+# makefile (from 'makefile', line 13)
+OBJS = $(OBJ)/main.o $(OBJ)/Lista.o $(OBJ)/Carta.o $(OBJ)/Pessoa.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -49,7 +65,7 @@ PATH = /home/caiozec/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3706581e-2ba2-4616-98e9-51c2bad38a8f.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-474ea384-f1ac-4565-9aad-5a13e989fb21.sock
 # environment
 VSCODE_SERVER_TAR = /mnt/c/Users/LOJAIN~1/AppData/Local/Temp/vscode-remote-wsl/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/vscode-server-stable-linux-x64.tar.gz
 # default
@@ -59,7 +75,7 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /home/caiozec/UFMG/ED
+PWD = /home/caiozec/UFMG/ED/TP3
 # default
 .LOADED := 
 # environment
@@ -73,7 +89,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = caiozec
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -86,12 +102,14 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 0
+# makefile (from 'makefile', line 7)
+CC = g++
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = caiozec
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := all
 # environment
 NAME = DESKTOP-FMF69BN
 # automatic
@@ -100,6 +118,8 @@ NAME = DESKTOP-FMF69BN
 VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Loja integrada/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
 MAKE_COMMAND := make
+# makefile (from 'makefile', line 11)
+INC = include
 # default
 .VARIABLES := 
 # automatic
@@ -124,6 +144,8 @@ MAKEFILES :=
 LC_ALL = C
 # environment
 HOSTTYPE = x86_64
+# makefile (from 'makefile', line 8)
+LIBS = -lm
 # automatic
 ^F = $(notdir $^)
 # default
@@ -139,7 +161,7 @@ TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=64/1024=6%, Rehash=0, Collisions=4/86=5%
+# Load=74/1024=7%, Rehash=0, Collisions=15/135=11%
 
 # Pattern-specific Variable Values
 
@@ -147,9 +169,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 65421): 18 files, no impossibilities.
+# . (device 2064, inode 47898): 9 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -157,26 +179,52 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Files
 
-# Not a target:
-all:
+all: bin/main
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
 
 # Not a target:
-Makefile:
-#  Implicit rule search has been done.
+include/Pessoa.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/main.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert.h src/main.cpp
+#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 26):
+	$(CC) $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-06-13 19:27:39.9829535
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+
+obj/Lista.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert.h src/Lista.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 29):
+	$(CC) $(CFLAGS) -o $(OBJ)/Lista.o $(SRC)/Lista.cpp
+
+obj/Carta.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert.h src/Carta.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 35):
+	$(CC) $(CFLAGS) -o $(OBJ)/Carta.o $(SRC)/Carta.cpp
+	
+
+# Not a target:
+src/Pessoa.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -185,28 +233,77 @@ makefile:
 #  File has not been updated.
 
 # Not a target:
-GNUmakefile:
+include/Lista.h:
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+#  File has not been updated.
+
+# Not a target:
+include/msgassert.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/Carta.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 39):
+	rm -r $(BIN)/* $(OBJ)/*
+
+# Not a target:
+src/main.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/main: obj/main.o obj/Lista.o obj/Carta.o obj/Pessoa.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 23):
+	$(CC) -o $(EXE) $(OBJS) $(LIBS)
+
+# Not a target:
+src/Lista.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
+# Not a target:
+src/Carta.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/Pessoa.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert.h src/Pessoa.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 32):
+	$(CC) $(CFLAGS) -o $(OBJ)/Pessoa.o $(SRC)/Pessoa.cpp
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/59=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 184 B / avg = 7 B
-# current buf: size = 8162 B / used = 184 B / count = 26 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 28 / storage = 291 B / avg = 10 B
+# current buf: size = 8162 B / used = 291 B / count = 28 / avg = 10 B
 
-# strcache performance: lookups = 29 / hit rate = 10%
+# strcache performance: lookups = 57 / hit rate = 50%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/29=3%
-# Finished Make data base on Thu Jul  7 18:32:48 2022
+# Load=28/8192=0%, Rehash=0, Collisions=1/57=2%
+# Finished Make data base on Thu Jul  7 18:29:35 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-

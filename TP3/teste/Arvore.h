@@ -2,16 +2,16 @@
 #define ARVORE_H
 #include <iostream>
 #include <string>
-
+#include <Email.h>
 using namespace std;
 
 
 class TipoNo
 {
     public:
-        TipoNo(char item);
+        TipoNo(Email item);
         private:
-        char item;
+        Email item;
         TipoNo *esq;
         TipoNo *dir;
         friend class Arvore;
@@ -22,17 +22,20 @@ class TipoNo
 class Arvore
 {
     public:
-        void Insere(char item);
-        char Pesquisa(char chave);
-        void Remove(char chave);
+        void Insere(Email item);
+        Email Pesquisa(Email chave);
+        void Remove(Email chave);
         void PreOrdem(TipoNo* p);
-        void InOrdem(TipoNo* p);
-        void PosOrdem(TipoNo* p);
-        void Limpa();
+        void Remove(Email chave);
+        //void InOrdem(TipoNo* p);
+        //void PosOrdem(TipoNo* p);
         TipoNo *raiz = nullptr;
     private:
-        void InsereRecursivo(TipoNo* &p, char item);
-        char PesquisaRecursivo(TipoNo* p, char chave);
+        void InsereRecursivo(TipoNo* &p, Email item);
+        Email PesquisaRecursivo(TipoNo* p, Email chave);
+        void RemoveRecursivo(TipoNo* &p, Email chave);
+        void Antecessor(TipoNo* q, TipoNo* &r);
+
         
 };
 
