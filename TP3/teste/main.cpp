@@ -1,49 +1,34 @@
 #include <iostream>
 #include "HashLE.h"
+#include <fstream>
 
 int main(int argc, char const *argv[])
 {
-    Hash_LE tabela_hash;
-    int usuario1_id = 1;
-    int usuario2_id = 2;
-    int usuario3_id = 3;
-    int usuario4_id = 4;
 
-    Email spam;
-    spam.id = 1;
-    spam.mensagem = "Voce foi hackeado!";
+    Hash_LE tab_hash;
 
-    Email spam2;
-    spam2.id = 2;
-    spam2.mensagem = "Voce foi hackeado dnv kk!";
+    int tam_tab;
+    int id_usuario;
+    int id_email;
+    int num_palavras;
+    char entrada;
+    string acao;
+    ifstream arq;
+    arq.open("entrada.txt");
 
+    while (arq >> acao)
+    {
+        entrada = acao[0];
+        switch (entrada)
+        {
+            case 'E':
+                cin >> id_usuario >> id_email >> num_palavras;
+                break;
+            
+            
+        }
+    }
     
-    Arvore u1;
-    Arvore u2;
-    Arvore u3;
-    Arvore u4;
-
-    u1.chave = usuario1_id;
-    u1.Insere(spam);
-    u1.Insere(spam2);
-    u2.chave = usuario2_id;
-    u2.Insere(spam);
-    u3.chave = usuario3_id;
-    u3.Insere(spam);
-    u4.chave = usuario4_id;
-    u4.Insere(spam);
-
-    
-
-    // tabela_hash.Insere(u1);
-    // tabela_hash.Insere(u2);
-    // tabela_hash.Insere(u3);
-    // tabela_hash.Insere(u4);
-
-
-
-    
-
-    
+    arq.close();
     return 0;
 }

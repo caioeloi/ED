@@ -23,7 +23,7 @@ class TipoNo
 class Arvore
 {
     public:
-        int chave;
+        int chave = -1;
         void Insere(Email item);
         Email Pesquisa(Email chave);
         void Remove(Email chave);
