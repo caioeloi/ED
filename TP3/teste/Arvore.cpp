@@ -11,6 +11,7 @@ Email Arvore::Pesquisa(Email chave) {
     return PesquisaRecursivo(raiz, chave);
 }
 
+
 Email Arvore::PesquisaRecursivo(TipoNo *no, Email chave) {
     Email aux;
     if (no == nullptr) {
@@ -37,8 +38,11 @@ void Arvore::InsereRecursivo(TipoNo* &p, Email item){
     else{
         if(item < p->item)
             InsereRecursivo(p->esq, item);
-        else
+        else if(item > p->item)
             InsereRecursivo(p->dir, item);
+        else{
+            cout << "Item ja inserido." << endl;
+        }
     }
 }
 

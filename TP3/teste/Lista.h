@@ -24,9 +24,9 @@ public:
     Lista();
     int tamanho = 0;
     Arvore GetItem(int pos);
-    void InsereInicio(const Arvore item);
     void InsereFinal(const Arvore item);
-    Arvore RemovePosicao(int pos);
+    Arvore Pesquisa(int c);
+    Arvore RemoveItem(int c);
     void Limpa();
 
 private:

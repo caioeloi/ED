@@ -33,18 +33,6 @@ TipoCelula* Lista::Posiciona(int pos, bool antes=false){
 }
 
 
-void Lista::InsereInicio(const Arvore item)
-{
-    TipoCelula *nova;
-    nova = new TipoCelula(item);
-    nova->item = item;
-    nova->prox = topo->prox;
-    topo->prox = nova;
-    tamanho++;
-    if(nova->prox == NULL)
-        ultimo = nova;
-}
-
 void Lista::InsereFinal(const Arvore item)
 {
     TipoCelula *nova;
@@ -56,22 +44,26 @@ void Lista::InsereFinal(const Arvore item)
 };
 
 
-Arvore Lista::RemovePosicao(int pos) {;
-    Arvore aux;
-    TipoCelula *p, *q;
-    if (tamanho == 0)
-        throw "ERRO: Lista vazia!";
-    // posiciona p na celula anterior à pos
-    p = Posiciona(pos, true);
-    q = p->prox;
-    p->prox = q->prox;
-    tamanho--;
-    aux = q->item;
-    delete q;
-    if(p->prox == NULL)
-        ultimo = p;
+Arvore Lista::RemoveItem(int c) {;
+    Arvore aux; TipoCelula *p, *q;
+    // Posiociona p na célula anterior ao item procurado
+    p = this->topo;
+    while ( (p->prox!=nullptr) && (p->prox->item.chave != c) )
+        p = p->prox;
+    // remove a célula contendo o item, retornando-o
+    if(p->prox == nullptr)
+        throw "Erro: item não está presente";
+    else {
+        q = p->prox;
+        p->prox = q->prox;
+        aux = q->item;
+        delete q;
+        this->tamanho--;
+        if(p->prox == nullptr) this->ultimo = p;
+    }
     return aux;
-}
+};
+
 
 
 void Lista::Limpa() {
@@ -92,3 +84,18 @@ Arvore Lista::GetItem(int pos){
     p = Posiciona(pos);
     return p->item;
 }
+
+
+Arvore Lista::Pesquisa(int c) {
+    Arvore aux; // construtor seta o item para -1;
+    TipoCelula *p;
+    p = this->topo->prox;
+    while (p!=nullptr) {
+        if (p->item.chave == c) {
+            aux = p->item;
+            break;
+        }
+        p = p->prox;
+    }
+    return aux;
+};

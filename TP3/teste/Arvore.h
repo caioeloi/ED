@@ -2,7 +2,8 @@
 #define ARVORE_H
 #include <iostream>
 #include <string>
-#include <Email.h>
+#include "Email.h"
+#include "msgassert.h"
 using namespace std;
 
 
@@ -22,11 +23,11 @@ class TipoNo
 class Arvore
 {
     public:
+        int chave;
         void Insere(Email item);
         Email Pesquisa(Email chave);
         void Remove(Email chave);
         void PreOrdem(TipoNo* p);
-        void Remove(Email chave);
         //void InOrdem(TipoNo* p);
         //void PosOrdem(TipoNo* p);
         TipoNo *raiz = nullptr;

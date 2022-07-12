@@ -1,7 +1,8 @@
 #ifndef HASHLE_H
 #define HASHLE_H
 #include <iostream>
-#include <Lista.h>
+#include "Lista.h"
+#include "Arvore.h"
 
 using namespace std;
 
@@ -9,11 +10,11 @@ class Hash_LE
 {
     public:
         Hash_LE(){};
-        int Pesquisa(int chave, int mod);
-        void Insere(int item, int mod);
+        Arvore Pesquisa(int chave);
+        void Insere(Arvore item);
         void Remove(int chave);
-        static const int M = 100;
-        int Hash(int Chave, int mod);
+        static const long int M = 1000000;
+        int Hash(int Chave);
         Lista Tabela[M];
         
 };
