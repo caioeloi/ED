@@ -33,7 +33,7 @@ int main(int argc, char const *argv[])
     u4.chave = usuario4_id;
     u4.Insere(spam);
 
-    u1.PreOrdem(u1.raiz);
+    
 
     // tabela_hash.Insere(u1);
     // tabela_hash.Insere(u2);
