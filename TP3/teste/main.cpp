@@ -1,4 +1,3 @@
-#include <iostream>
 #include "HashLE.h"
 #include <fstream>
 
@@ -32,7 +31,10 @@ int main(int argc, char const *argv[])
     string mensagem;
     Email e_aux;
     Arvore aux;
-    arq.open("entrada.txt");
+    string nomeEntrada = "entrada.txt";
+    string nomeSaida = "saida.txt";
+    string saida;
+    arq.open(nomeEntrada);
     arq >> tam_tab;
     int hashing;
     int cont = 0;
@@ -53,14 +55,14 @@ int main(int argc, char const *argv[])
                     e_aux.id = id_email;
                     e_aux.mensagem = mensagem;
                     insere_Hash(&tab_hash, tam_tab, id_usuario, e_aux, cont);
-                    cout << "OK: MENSAGEM " << id_email << " PARA " << id_usuario << " ARMAZENADA EM " << id_usuario % tam_tab << endl;
+                    saida += "OK: MENSAGEM " + to_string(id_email) + " PARA " + to_string(id_usuario) + " ARMAZENADA EM " + to_string(id_usuario % tam_tab) + '\n';
 
                 }else{
                     cont = 1;
                     e_aux.id = id_email;
                     e_aux.mensagem = mensagem;
                     insere_Hash(&tab_hash, tam_tab, id_usuario, e_aux, cont);
-                    cout << "OK: MENSAGEM " << id_email << " PARA " << id_usuario << " ARMAZENADA EM " << id_usuario % tam_tab << endl;
+                    saida += "OK: MENSAGEM " + to_string(id_email) + " PARA " + to_string(id_usuario) + " ARMAZENADA EM " + to_string(id_usuario % tam_tab) + '\n';
                 }
                 break;
 
@@ -73,12 +75,12 @@ int main(int argc, char const *argv[])
                     e_aux = aux.Pesquisa(e_aux);
                     if (e_aux.id == -1)
                     {
-                        cout << "CONSULTA " << id_usuario << ' ' << id_email << ": MENSAGEM INEXISTENTE" << endl;
+                        saida += "CONSULTA " + to_string(id_usuario) + ' ' + to_string(id_email) + ": MENSAGEM INEXISTENTE\n";
                     }else{
-                        cout << "CONSULTA " << id_usuario << ' ' << id_email << ": " << e_aux.mensagem << endl;
+                        saida += "CONSULTA " + to_string(id_usuario) + ' ' + to_string(id_email) + ": " + e_aux.mensagem + '\n';
                     }
                 }else{
-                    cout << "ERRO: " << id_usuario << ' ' << id_email << ": USUARIO INEXISTENTE" << endl;
+                    saida += "ERRO: " + to_string(id_usuario) + ' ' + to_string(id_email) + ": USUARIO INEXISTENTE" + '\n';
                 }
                 break;
                 
@@ -91,19 +93,19 @@ int main(int argc, char const *argv[])
                     e_aux = aux.Pesquisa(e_aux);
                     if (e_aux.id == -1)
                     {
-                        cout << "ERRO: MENSAGEM INEXISTENTE" << endl;
+                        saida += "ERRO: MENSAGEM INEXISTENTE\n";
                     }else{
                         hashing = id_usuario % tam_tab;
                         tab_hash.Tabela[hashing].Edita(id_usuario, e_aux, 2);
-                        cout << "OK: MENSAGEM APAGADA" << endl;
+                        saida += "OK: MENSAGEM APAGADA\n";
                     }
                 }else{
-                    cout << "ERRO: " << id_usuario << ' ' << id_email << ": USUARIO INEXISTENTE" << endl;
+                    saida += "ERRO: " + to_string(id_usuario) + ' ' + to_string(id_email) + ": USUARIO INEXISTENTE" + '\n';
                 }
-
                 break;  
         }
     }
     arq.close();
+    cout << saida << endl;
     return 0;
 }

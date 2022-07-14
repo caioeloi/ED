@@ -1,11 +1,7 @@
 #ifndef ARVORE_H
 #define ARVORE_H
-#include <iostream>
-#include <string>
 #include "Email.h"
 #include "msgassert.h"
-using namespace std;
-
 
 class TipoNo
 {
@@ -32,5 +28,4 @@ class Arvore
         void RemoveRecursivo(TipoNo* &p, Email chave);
         void Antecessor(TipoNo* q, TipoNo* &r);
 };
-
 #endif

@@ -1,10 +1,6 @@
 #ifndef LISTA_H
 #define LISTA_H
-#include <iostream>
-#include <string>
 #include "Arvore.h"
-
-using namespace std;
 
 class TipoCelula
 {
@@ -23,12 +19,9 @@ class Lista
 public:
     Lista();
     int tamanho = 0;
-    Arvore GetItem(int pos);
     void InsereFinal(const Arvore item);
     Arvore Pesquisa(int c);
-    Arvore RemoveItem(int c);
     void Edita(int c, Email e, int cont);
-    void Limpa();
 
 private:
     TipoCelula* topo = nullptr;

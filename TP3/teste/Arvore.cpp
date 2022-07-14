@@ -62,9 +62,6 @@ void Arvore::Remove(Email chave) {
 
 void Arvore::RemoveRecursivo(TipoNo* &no, Email chave){
     TipoNo *aux;
-    if (no == nullptr) {
-        throw("Item nao está presente");
-    }
     if (chave < no->item)
         return RemoveRecursivo(no->esq, chave);
     else if (chave>no->item)
