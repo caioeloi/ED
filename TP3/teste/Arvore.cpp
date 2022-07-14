@@ -11,7 +11,6 @@ Email Arvore::Pesquisa(Email chave) {
     return PesquisaRecursivo(raiz, chave);
 }
 
-
 Email Arvore::PesquisaRecursivo(TipoNo *no, Email chave) {
     Email aux;
     if (no == nullptr) {
@@ -45,15 +44,6 @@ void Arvore::InsereRecursivo(TipoNo* &p, Email item){
         }
     }
 }
-
-void Arvore::PreOrdem(TipoNo *p){
-    if(p!=nullptr){
-        cout << p->item.mensagem << endl;
-        PreOrdem(p->esq);
-        PreOrdem(p->dir);
-    }  
-}
-
 
 void Arvore::Antecessor(TipoNo *q, TipoNo* &r){
     if(r->dir != NULL) {

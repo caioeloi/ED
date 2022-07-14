@@ -1,32 +1,34 @@
 #include "HashLE.h"
 
 
-int Hash_LE::Hash(int chave){
-    return chave % this->M;
+int Hash_LE::Hash(int chave, int tam_tab){
+    return chave % tam_tab;
 }
 
 
-void Hash_LE::Insere(Arvore item){
+void Hash_LE::Insere(Arvore item, int tam_tab){
     Arvore aux;
     int pos;
-    aux = Pesquisa(item.chave);
-    if(!aux.chave == -1)
+    aux = Pesquisa(item.chave, tam_tab);
+    if(!aux.chave == -1){
         throw("Erro: Item já está presente");
-    pos = Hash(item.chave);
+    }
+    pos = Hash(item.chave, tam_tab);
     Tabela[pos].InsereFinal(item);
+    
 }
 
-Arvore Hash_LE::Pesquisa(int chave){
+Arvore Hash_LE::Pesquisa(int chave, int tam_tab){
     int pos;
     Arvore item;
-    pos = Hash(chave);
+    pos = Hash(chave, tam_tab);
     item = Tabela[pos].Pesquisa(chave);
     return item;
 }
 
-void Hash_LE::Remove(int chave){
+void Hash_LE::Remove(int chave, int tam_tab){
     int pos;
-    pos = Hash(chave);
+    pos = Hash(chave, tam_tab);
     Tabela[pos].RemoveItem(chave);
 
 }

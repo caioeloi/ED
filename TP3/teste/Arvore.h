@@ -18,8 +18,6 @@ class TipoNo
         friend class Arvore;
 };
 
-
-
 class Arvore
 {
     public:
@@ -27,18 +25,12 @@ class Arvore
         void Insere(Email item);
         Email Pesquisa(Email chave);
         void Remove(Email chave);
-        void PreOrdem(TipoNo* p);
-        //void InOrdem(TipoNo* p);
-        //void PosOrdem(TipoNo* p);
         TipoNo *raiz = nullptr;
     private:
         void InsereRecursivo(TipoNo* &p, Email item);
         Email PesquisaRecursivo(TipoNo* p, Email chave);
         void RemoveRecursivo(TipoNo* &p, Email chave);
         void Antecessor(TipoNo* q, TipoNo* &r);
-
-        
 };
-
 
 #endif

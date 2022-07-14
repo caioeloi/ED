@@ -27,6 +27,7 @@ public:
     void InsereFinal(const Arvore item);
     Arvore Pesquisa(int c);
     Arvore RemoveItem(int c);
+    void Edita(int c, Email e, int cont);
     void Limpa();
 
 private:

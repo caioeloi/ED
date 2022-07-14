@@ -99,3 +99,29 @@ Arvore Lista::Pesquisa(int c) {
     }
     return aux;
 };
+
+void Lista::Edita(int c, Email e, int cont){
+    TipoCelula *p;
+
+    if (cont == 1)
+    {
+        p = this->topo->prox;
+        while (p!=nullptr) {
+            if (p->item.chave == c) {
+                p->item.Insere(e);
+            }
+            p = p->prox;
+        }
+    }else{
+        p = this->topo->prox;
+        while (p!=nullptr) {
+            if (p->item.chave == c) {
+                p->item.Remove(e);
+            }
+            p = p->prox;
+        }
+    }
+    
+        
+
+}
