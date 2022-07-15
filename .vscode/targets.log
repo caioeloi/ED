@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul  8 10:36:33 2022
+# Make data base, printed on Fri Jul 15 00:17:14 2022
 
 # Variables
 
@@ -31,9 +31,9 @@ CURDIR := /home/caiozec/UFMG/ED
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"dc7ba51c4efcfec965eaa07de065afd6.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /home/caiozec/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/node
+_ = /home/caiozec/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/node
 # makefile
 MAKEFILE_LIST := 
 # 'override' directive
@@ -47,11 +47,11 @@ VSCODE_CWD = /mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Cod
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/caiozec/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/bin/remote-cli:/home/caiozec/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Users/Loja integrada/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/heroku/bin:/mnt/c/Users/Loja integrada/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Loja integrada/AppData/Roaming/npm:/snap/bin
+PATH = /home/caiozec/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/bin/remote-cli:/home/caiozec/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Users/Loja integrada/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/heroku/bin:/mnt/c/Users/Loja integrada/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Loja integrada/AppData/Roaming/npm:/snap/bin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ee385341-fb7c-40e8-9104-d126ec7bb6be.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-2aa05f16-88fc-45e1-b6ce-258b98e653b2.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -63,7 +63,7 @@ PWD = /home/caiozec/UFMG/ED
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/13_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -73,7 +73,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = caiozec
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -138,10 +138,8 @@ LANG = C
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=64/1024=6%, Rehash=0, Collisions=4/86=5%
+# Load=63/1024=6%, Rehash=0, Collisions=4/85=5%
 
 # Pattern-specific Variable Values
 
@@ -149,9 +147,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2064, inode 65421): 18 files, no impossibilities.
+# . (device 2064, inode 65421): 19 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -201,12 +199,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 184 B / avg = 7 B
-# current buf: size = 8162 B / used = 184 B / count = 26 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 196 B / avg = 7 B
+# current buf: size = 8162 B / used = 196 B / count = 27 / avg = 7 B
 
-# strcache performance: lookups = 29 / hit rate = 10%
+# strcache performance: lookups = 30 / hit rate = 10%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/29=3%
-# Finished Make data base on Fri Jul  8 10:36:33 2022
+# Load=27/8192=0%, Rehash=0, Collisions=1/30=3%
+# Finished Make data base on Fri Jul 15 00:17:14 2022
 
  

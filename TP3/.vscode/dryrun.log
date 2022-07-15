@@ -1,12 +1,10 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/caiozec/UFMG/ED/TP3'
+g++ -Wall -c -Iinclude -g -o obj/main.o src/main.cpp
+g++ -Wall -c -Iinclude -g -o obj/Lista.o src/Lista.cpp
+g++ -Wall -c -Iinclude -g -o obj/HashLE.o src/HashLE.cpp
+g++ -Wall -c -Iinclude -g -o obj/Email.o src/Email.cpp
+g++ -Wall -c -Iinclude -g -o obj/Arvore.o src/Arvore.cpp
+g++ -o bin/main obj/main.o obj/Lista.o obj/HashLE.o obj/Email.o obj/Arvore.o -lm
 make: Leaving directory '/home/caiozec/UFMG/ED/TP3'
  
-make: *** No rule to make target 'include/Lista.h', needed by 'obj/main.o'.
-make: *** No rule to make target 'include/Pessoa.h', needed by 'obj/main.o'.
-make: *** No rule to make target 'include/Carta.h', needed by 'obj/main.o'.
-make: *** No rule to make target 'include/msgassert.h', needed by 'obj/main.o'.
-make: *** No rule to make target 'src/Lista.cpp', needed by 'obj/Lista.o'.
-make: *** No rule to make target 'src/Carta.cpp', needed by 'obj/Carta.o'.
-make: *** No rule to make target 'src/Pessoa.cpp', needed by 'obj/Pessoa.o'.
-

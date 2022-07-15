@@ -1,7 +1,6 @@
 #ifndef ARVORE_H
 #define ARVORE_H
 #include "Email.h"
-#include "msgassert.h"
 
 class TipoNo
 {

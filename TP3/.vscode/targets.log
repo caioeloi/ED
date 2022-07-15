@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'include/Lista.h', needed by 'obj/main.o'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'include/Lista.h', needed by 'obj/main.o'.  Sto
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul  7 18:29:35 2022
+# Make data base, printed on Fri Jul 15 00:27:10 2022
 
 # Variables
 
@@ -17,7 +15,7 @@ make: *** No rule to make target 'include/Lista.h', needed by 'obj/main.o'.  Sto
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # makefile (from 'makefile', line 10)
@@ -39,13 +37,13 @@ SHELL = /bin/sh
 # makefile (from 'makefile', line 12)
 BIN = bin
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"dc7ba51c4efcfec965eaa07de065afd6.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /home/caiozec/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/node
+_ = /home/caiozec/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/node
 # makefile (from 'makefile', line 15)
 CFLAGS = -Wall -c -I$(INC) -g
 # makefile (from 'makefile', line 14)
-HDRS = $(INC)/Lista.h $(INC)/Pessoa.h $(INC)/Carta.h $(INC)/msgassert.h
+HDRS = $(INC)/Email.h $(INC)/Lista.h $(INC)/Arvore.h $(INC)/HashLE.h 
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -53,7 +51,7 @@ GNUMAKEFLAGS :=
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # makefile (from 'makefile', line 13)
-OBJS = $(OBJ)/main.o $(OBJ)/Lista.o $(OBJ)/Carta.o $(OBJ)/Pessoa.o
+OBJS = $(OBJ)/main.o $(OBJ)/Lista.o $(OBJ)/HashLE.o $(OBJ)/Email.o $(OBJ)/Arvore.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -61,13 +59,11 @@ VSCODE_CWD = /mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Cod
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/caiozec/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/bin/remote-cli:/home/caiozec/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Users/Loja integrada/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/heroku/bin:/mnt/c/Users/Loja integrada/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Loja integrada/AppData/Roaming/npm:/snap/bin
+PATH = /home/caiozec/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/bin/remote-cli:/home/caiozec/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Users/Loja integrada/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/heroku/bin:/mnt/c/Users/Loja integrada/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Loja integrada/AppData/Roaming/npm:/snap/bin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-474ea384-f1ac-4565-9aad-5a13e989fb21.sock
-# environment
-VSCODE_SERVER_TAR = /mnt/c/Users/LOJAIN~1/AppData/Local/Temp/vscode-remote-wsl/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/vscode-server-stable-linux-x64.tar.gz
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-f060f86c-9fab-4c66-8067-f69a962013ba.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -79,7 +75,7 @@ PWD = /home/caiozec/UFMG/ED/TP3
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/8_interop
+WSL_INTEROP = /run/WSL/13_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -89,7 +85,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = caiozec
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -161,7 +157,7 @@ TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=15/135=11%
+# Load=73/1024=7%, Rehash=0, Collisions=17/142=12%
 
 # Pattern-specific Variable Values
 
@@ -169,9 +165,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 47898): 9 files, no impossibilities.
+# . (device 2064, inode 47898): 8 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -179,52 +175,80 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Files
 
+obj/Arvore.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/Arvore.cpp
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-15 00:26:06.185413634
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 35):
+	$(CC) $(CFLAGS) -o $(OBJ)/Arvore.o $(SRC)/Arvore.cpp
+
 all: bin/main
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-include/Pessoa.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/Email.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-13 23:07:39.824986146
+#  File has been updated.
+#  Successfully updated.
 
-obj/main.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert.h src/main.cpp
+obj/main.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/main.cpp
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 26):
+#  Last modified 2022-07-15 00:26:05.525413632
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 29):
 	$(CC) $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp
+
+# Not a target:
+include/Arvore.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-15 00:15:01.255411604
+#  File has been updated.
+#  Successfully updated.
+
+obj/HashLE.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/HashLE.cpp
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-15 00:26:05.855413633
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 38):
+	$(CC) $(CFLAGS) -o $(OBJ)/HashLE.o $(SRC)/HashLE.cpp
+	
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-13 19:27:39.9829535
+#  Last modified 2022-07-15 00:16:48.725411932
 #  File has been updated.
 #  Successfully updated.
 
-obj/Lista.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert.h src/Lista.cpp
+obj/Lista.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/Lista.cpp
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 29):
+#  Last modified 2022-07-15 00:26:05.685413632
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 32):
 	$(CC) $(CFLAGS) -o $(OBJ)/Lista.o $(SRC)/Lista.cpp
 
-obj/Carta.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert.h src/Carta.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 35):
-	$(CC) $(CFLAGS) -o $(OBJ)/Carta.o $(SRC)/Carta.cpp
-	
+# Not a target:
+src/Arvore.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-13 23:30:31.894990333
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-src/Pessoa.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+include/HashLE.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-13 23:27:37.544989801
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -235,75 +259,76 @@ src/Pessoa.cpp:
 # Not a target:
 include/Lista.h:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
-
-# Not a target:
-include/msgassert.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-include/Carta.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2022-07-13 23:09:59.984986574
+#  File has been updated.
+#  Successfully updated.
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 39):
+#  recipe to execute (from 'makefile', line 41):
 	rm -r $(BIN)/* $(OBJ)/*
+
+obj/Email.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/Email.cpp
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-15 00:26:06.015413633
+#  File has been updated.
+ 
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 26):
+	$(CC) $(CFLAGS) -o $(OBJ)/Email.o $(SRC)/Email.cpp
 
 # Not a target:
 src/main.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-07-15 00:21:57.255412874
+#  File has been updated.
+#  Successfully updated.
 
-bin/main: obj/main.o obj/Lista.o obj/Carta.o obj/Pessoa.o
+# Not a target:
+src/HashLE.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-13 23:28:47.474990014
+#  File has been updated.
+#  Successfully updated.
+
+bin/main: obj/main.o obj/Lista.o obj/HashLE.o obj/Email.o obj/Arvore.o
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-07-15 00:26:06.275413634
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 23):
 	$(CC) -o $(EXE) $(OBJS) $(LIBS)
 
 # Not a target:
 src/Lista.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-07-13 23:29:22.364990121
+#  File has been updated.
+#  Successfully updated.
 
- 
 # Not a target:
-src/Carta.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-obj/Pessoa.o: include/Lista.h include/Pessoa.h include/Carta.h include/msgassert.h src/Pessoa.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 32):
-	$(CC) $(CFLAGS) -o $(OBJ)/Pessoa.o $(SRC)/Pessoa.cpp
+include/Email.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-15 00:17:25.835412046
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=0/59=0%
+# Load=20/1024=2%, Rehash=0, Collisions=1/68=1%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 28 / storage = 291 B / avg = 10 B
-# current buf: size = 8162 B / used = 291 B / count = 28 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 310 B / avg = 10 B
+# current buf: size = 8162 B / used = 310 B / count = 29 / avg = 10 B
 
-# strcache performance: lookups = 57 / hit rate = 50%
+# strcache performance: lookups = 64 / hit rate = 54%
 # hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=1/57=2%
-# Finished Make data base on Thu Jul  7 18:29:35 2022
+# Load=29/8192=0%, Rehash=0, Collisions=1/64=2%
+# Finished Make data base on Fri Jul 15 00:27:10 2022
 
  

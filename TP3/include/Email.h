@@ -1,6 +1,7 @@
 #ifndef EMAIL_H
 #define EMAIL_H
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Email

@@ -10,8 +10,8 @@ SRC = src
 OBJ = obj
 INC = include
 BIN = bin
-OBJS = $(OBJ)/main.o $(OBJ)/Lista.o $(OBJ)/Carta.o $(OBJ)/Pessoa.o
-HDRS = $(INC)/Lista.h $(INC)/Pessoa.h $(INC)/Carta.h $(INC)/msgassert.h
+OBJS = $(OBJ)/main.o $(OBJ)/Lista.o $(OBJ)/HashLE.o $(OBJ)/Email.o $(OBJ)/Arvore.o
+HDRS = $(INC)/Email.h $(INC)/Lista.h $(INC)/Arvore.h $(INC)/HashLE.h 
 CFLAGS = -Wall -c -I$(INC) -g
 
 EXE = $(BIN)/main
@@ -22,18 +22,20 @@ all: $(EXE)
 $(BIN)/main: $(OBJS)
 	$(CC) -o $(EXE) $(OBJS) $(LIBS)
 
+$(OBJ)/Email.o: $(HDRS) $(SRC)/Email.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/Email.o $(SRC)/Email.cpp
+
 $(OBJ)/main.o: $(HDRS) $(SRC)/main.cpp
 	$(CC) $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp
 
 $(OBJ)/Lista.o: $(HDRS) $(SRC)/Lista.cpp
 	$(CC) $(CFLAGS) -o $(OBJ)/Lista.o $(SRC)/Lista.cpp
 
-$(OBJ)/Pessoa.o: $(HDRS) $(SRC)/Pessoa.cpp
-	$(CC) $(CFLAGS) -o $(OBJ)/Pessoa.o $(SRC)/Pessoa.cpp
+$(OBJ)/Arvore.o: $(HDRS) $(SRC)/Arvore.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/Arvore.o $(SRC)/Arvore.cpp
 
-$(OBJ)/Carta.o: $(HDRS) $(SRC)/Carta.cpp
-	$(CC) $(CFLAGS) -o $(OBJ)/Carta.o $(SRC)/Carta.cpp
-
+$(OBJ)/HashLE.o: $(HDRS) $(SRC)/HashLE.cpp
+	$(CC) $(CFLAGS) -o $(OBJ)/HashLE.o $(SRC)/HashLE.cpp
 	
 clean:
 	rm -r $(BIN)/* $(OBJ)/*
