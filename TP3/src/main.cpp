@@ -27,8 +27,6 @@ void insere_Hash(Hash_LE *tab_hash ,int tam_tab, int chave, Email infos, int con
 int main(int argc, char const *argv[])
 {
     ifstream arq;
-
-
     Hash_LE tab_hash;
     int tam_tab;
     int id_usuario;
@@ -39,8 +37,10 @@ int main(int argc, char const *argv[])
     string mensagem;
     Email e_aux;
     Arvore aux;
-    string nomeEntrada = "entrada.txt";
-    string nomeSaida = "saida.txt";
+    string nomeEntrada;
+    string nomeSaida;
+    nomeEntrada = argv[2]; 
+    nomeSaida = argv[4];
     string saida;
     arq.open(nomeEntrada);
     arq >> tam_tab;
