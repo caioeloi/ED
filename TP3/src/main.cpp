@@ -5,25 +5,6 @@
 
 using namespace std;
 
-
-void insere_Hash(Hash_LE *tab_hash ,int tam_tab, int chave, Email infos, int cont){
-    Arvore aux;
-    int hashiando = 0;
-    if (cont == 0)
-    {
-        aux.chave = chave;
-        aux.Insere(infos);
-        tab_hash->Insere(aux, tam_tab);
-
-    }else{
-        hashiando = chave % tam_tab;
-        tab_hash->Tabela[hashiando].Edita(chave, infos, 1);
-    }
-    
-}
-
-
-
 int main(int argc, char const *argv[])
 {
     ifstream arq;
@@ -44,8 +25,7 @@ int main(int argc, char const *argv[])
     string saida;
     arq.open(nomeEntrada);
     arq >> tam_tab;
-    int hashing;
-    int cont = 0;
+    tab_hash.Tabela = new Arvore[tam_tab];
 
     while (arq >> acao)
     {
@@ -54,22 +34,31 @@ int main(int argc, char const *argv[])
         {
             case 'E':
                 arq >> id_usuario >> id_email >> num_palavras;
+                if (num_palavras < 0 || num_palavras > 200 || id_usuario < 0 || id_usuario > 1000000 || id_email < 0 || id_email > 1000000)
+                {
+                    break;
+                }
+                
                 getline(arq, mensagem);
                 mensagem = mensagem.substr(1, mensagem.length());
                 aux = tab_hash.Pesquisa(id_usuario, tam_tab);
+                // se a arvore não existir...
                 if (aux.chave == -1)
                 {
-                    cont = 0;
                     e_aux.id = id_email;
                     e_aux.mensagem = mensagem;
-                    insere_Hash(&tab_hash, tam_tab, id_usuario, e_aux, cont);
+                    e_aux.id_usuario = id_usuario;
+                    tab_hash.Insere(e_aux, tam_tab);
                     saida += "OK: MENSAGEM " + to_string(id_email) + " PARA " + to_string(id_usuario) + " ARMAZENADA EM " + to_string(id_usuario % tam_tab) + '\n';
-
+                // se a arvore existir...
                 }else{
-                    cont = 1;
                     e_aux.id = id_email;
                     e_aux.mensagem = mensagem;
-                    insere_Hash(&tab_hash, tam_tab, id_usuario, e_aux, cont);
+                    e_aux.id_usuario = id_usuario;
+                    if(aux.Pesquisa(e_aux).id != -1){
+                        break;
+                    }
+                    tab_hash.Insere(e_aux, tam_tab);
                     saida += "OK: MENSAGEM " + to_string(id_email) + " PARA " + to_string(id_usuario) + " ARMAZENADA EM " + to_string(id_usuario % tam_tab) + '\n';
                 }
                 break;
@@ -81,14 +70,14 @@ int main(int argc, char const *argv[])
                 {
                     e_aux.id = id_email;
                     e_aux = aux.Pesquisa(e_aux);
-                    if (e_aux.id == -1)
+                    if (e_aux.id == -1 || e_aux.id_usuario != id_usuario)
                     {
                         saida += "CONSULTA " + to_string(id_usuario) + ' ' + to_string(id_email) + ": MENSAGEM INEXISTENTE\n";
                     }else{
                         saida += "CONSULTA " + to_string(id_usuario) + ' ' + to_string(id_email) + ": " + e_aux.mensagem + '\n';
                     }
                 }else{
-                    saida += "ERRO: " + to_string(id_usuario) + ' ' + to_string(id_email) + ": USUARIO INEXISTENTE" + '\n';
+                    break;
                 }
                 break;
                 
@@ -98,17 +87,17 @@ int main(int argc, char const *argv[])
                 if (aux.chave != -1)
                 {
                     e_aux.id = id_email;
+                    e_aux.id_usuario = id_usuario;
                     e_aux = aux.Pesquisa(e_aux);
-                    if (e_aux.id == -1)
+                    if (e_aux.id == -1 || e_aux.id_usuario != id_usuario)
                     {
                         saida += "ERRO: MENSAGEM INEXISTENTE\n";
                     }else{
-                        hashing = id_usuario % tam_tab;
-                        tab_hash.Tabela[hashing].Edita(id_usuario, e_aux, 2);
+                        tab_hash.Remove(e_aux, tam_tab);
                         saida += "OK: MENSAGEM APAGADA\n";
                     }
                 }else{
-                    saida += "ERRO: " + to_string(id_usuario) + ' ' + to_string(id_email) + ": USUARIO INEXISTENTE" + '\n';
+                    break;
                 }
                 break;  
         }

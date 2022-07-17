@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul 15 00:27:10 2022
+# Make data base, printed on Sun Jul 17 17:43:06 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ _ = /home/caiozec/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/no
 # makefile (from 'makefile', line 15)
 CFLAGS = -Wall -c -I$(INC) -g
 # makefile (from 'makefile', line 14)
-HDRS = $(INC)/Email.h $(INC)/Lista.h $(INC)/Arvore.h $(INC)/HashLE.h 
+HDRS = $(INC)/Email.h $(INC)/Arvore.h $(INC)/HashLE.h 
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -51,7 +51,7 @@ GNUMAKEFLAGS :=
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # makefile (from 'makefile', line 13)
-OBJS = $(OBJ)/main.o $(OBJ)/Lista.o $(OBJ)/HashLE.o $(OBJ)/Email.o $(OBJ)/Arvore.o
+OBJS = $(OBJ)/main.o $(OBJ)/HashLE.o $(OBJ)/Email.o $(OBJ)/Arvore.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -63,7 +63,7 @@ PATH = /home/caiozec/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-f060f86c-9fab-4c66-8067-f69a962013ba.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-eb4658d7-1cb3-4468-918b-58fd1d3ebe27.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -75,7 +75,7 @@ PWD = /home/caiozec/UFMG/ED/TP3
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/13_interop
+WSL_INTEROP = /run/WSL/1283_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -85,7 +85,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = caiozec
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -157,7 +157,7 @@ TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=73/1024=7%, Rehash=0, Collisions=17/142=12%
+# Load=73/1024=7%, Rehash=0, Collisions=16/138=12%
 
 # Pattern-specific Variable Values
 
@@ -165,9 +165,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 47898): 8 files, no impossibilities.
+# . (device 2064, inode 47898): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -175,12 +175,11 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Files
 
-obj/Arvore.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/Arvore.cpp
+obj/Arvore.o: include/Email.h include/Arvore.h include/HashLE.h src/Arvore.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-15 00:26:06.185413634
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 35):
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 32):
 	$(CC) $(CFLAGS) -o $(OBJ)/Arvore.o $(SRC)/Arvore.cpp
 
 all: bin/main
@@ -188,65 +187,81 @@ all: bin/main
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
 
 # Not a target:
 src/Email.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 23:07:39.824986146
-#  File has been updated.
-#  Successfully updated.
-
-obj/main.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/main.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-15 00:26:05.525413632
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/main.o: include/Email.h include/Arvore.h include/HashLE.h src/main.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/main.o
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := include/Email.h include/Arvore.h include/HashLE.h src/main.cpp
+# automatic
+# | := 
+# automatic
+# < := include/Email.h
+# automatic
+# ^ := include/Email.h include/Arvore.h include/HashLE.h src/main.cpp
+# automatic
+# ? := include/Email.h include/Arvore.h include/HashLE.h src/main.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/16=19%
 #  recipe to execute (from 'makefile', line 29):
 	$(CC) $(CFLAGS) -o $(OBJ)/main.o $(SRC)/main.cpp
 
 # Not a target:
 include/Arvore.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-15 00:15:01.255411604
+#  Last modified 2022-07-17 16:50:23.273046743
 #  File has been updated.
 #  Successfully updated.
 
-obj/HashLE.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/HashLE.cpp
+# Not a target:
+.SUFFIXES:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-15 00:26:05.855413633
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 38):
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/HashLE.o: include/Email.h include/Arvore.h include/HashLE.h src/HashLE.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 35):
 	$(CC) $(CFLAGS) -o $(OBJ)/HashLE.o $(SRC)/HashLE.cpp
 	
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-15 00:16:48.725411932
+#  Last modified 2022-07-17 17:42:58.783056373
 #  File has been updated.
 #  Successfully updated.
-
-obj/Lista.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/Lista.cpp
-#  Implicit rule search has not been done.
-#  Last modified 2022-07-15 00:26:05.685413632
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 32):
-	$(CC) $(CFLAGS) -o $(OBJ)/Lista.o $(SRC)/Lista.cpp
 
 # Not a target:
 src/Arvore.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 23:30:31.894990333
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 include/HashLE.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-13 23:27:37.544989801
+#  Last modified 2022-07-17 17:13:58.403051061
 #  File has been updated.
 #  Successfully updated.
 
@@ -256,79 +271,65 @@ include/HashLE.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-include/Lista.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 23:09:59.984986574
-#  File has been updated.
-#  Successfully updated.
-
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 41):
+#  recipe to execute (from 'makefile', line 38):
 	rm -r $(BIN)/* $(OBJ)/*
 
-obj/Email.o: include/Email.h include/Lista.h include/Arvore.h include/HashLE.h src/Email.cpp
+obj/Email.o: include/Email.h include/Arvore.h include/HashLE.h src/Email.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-15 00:26:06.015413633
-#  File has been updated.
- 
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'makefile', line 26):
 	$(CC) $(CFLAGS) -o $(OBJ)/Email.o $(SRC)/Email.cpp
 
 # Not a target:
 src/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-15 00:21:57.255412874
+#  Last modified 2022-07-17 17:38:04.803055476
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/HashLE.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 23:28:47.474990014
-#  File has been updated.
-#  Successfully updated.
-
-bin/main: obj/main.o obj/Lista.o obj/HashLE.o obj/Email.o obj/Arvore.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-15 00:26:06.275413634
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/main: obj/main.o obj/HashLE.o obj/Email.o obj/Arvore.o
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
 #  recipe to execute (from 'makefile', line 23):
 	$(CC) -o $(EXE) $(OBJS) $(LIBS)
 
 # Not a target:
-src/Lista.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-13 23:29:22.364990121
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
 include/Email.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-15 00:17:25.835412046
+#  Last modified 2022-07-17 15:54:13.593036459
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=1/68=1%
+# Load=17/1024=2%, Rehash=0, Collisions=1/55=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 310 B / avg = 10 B
-# current buf: size = 8162 B / used = 310 B / count = 29 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 274 B / avg = 10 B
+# current buf: size = 8162 B / used = 274 B / count = 27 / avg = 10 B
 
-# strcache performance: lookups = 64 / hit rate = 54%
+# strcache performance: lookups = 54 / hit rate = 50%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/64=2%
-# Finished Make data base on Fri Jul 15 00:27:10 2022
+# Load=27/8192=0%, Rehash=0, Collisions=1/54=2%
+# Finished Make data base on Sun Jul 17 17:43:06 2022
 
  
