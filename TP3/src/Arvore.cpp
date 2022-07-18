@@ -46,7 +46,7 @@ void Arvore::InsereRecursivo(TipoNo* &p, Email item){
 }
 
 void Arvore::Antecessor(TipoNo *q, TipoNo* &r){
-    if(r->dir != NULL) {
+    if(r->dir != nullptr) {
         Antecessor(q, r->dir);
         return;
     }
@@ -72,7 +72,7 @@ void Arvore::RemoveRecursivo(TipoNo* &no, Email chave){
             no = no->esq;
             free(aux);
         }
-        else if(no->esq == NULL) {
+        else if(no->esq == nullptr) {
             aux = no;
             no = no->dir;
             free(aux);

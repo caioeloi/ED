@@ -11,7 +11,7 @@ OBJ = obj
 INC = include
 BIN = bin
 OBJS = $(OBJ)/main.o $(OBJ)/HashLE.o $(OBJ)/Email.o $(OBJ)/Arvore.o
-HDRS = $(INC)/Email.h $(INC)/Arvore.h $(INC)/HashLE.h 
+HDRS = $(INC)/Email.h $(INC)/Arvore.h $(INC)/HashLE.h $(INC)/msgassert.h 
 CFLAGS = -Wall -c -I$(INC) -g
 
 EXE = $(BIN)/main

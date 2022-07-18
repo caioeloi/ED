@@ -1,12 +1,44 @@
 #include "HashLE.h"
+#include "msgassert.h"
 #include <fstream>
 #include <getopt.h>
 #include <iostream>
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+//Variaveis globais
+string logNome, outNome;
+
+void parseArgs(int argc, char **argv) {
+
+    // variáveis externas do getopt
+    extern char *optarg;
+
+    // variável auxiliar
+    int c;
+
+    // getopt - letra indica a opção, : junto a letra indica parâmetro
+    // no caso de escolher mais de uma operação, vale a última
+    while ((c = getopt(argc, argv, "i:o:lh")) != EOF) {
+        switch (c) {
+            case 'o': outNome = optarg; break;
+            case 'i': logNome = optarg; break;
+            case 'h':
+            default: exit(1);
+        }
+    }
+    // verificação da consistência das opções
+    erroAssert(!outNome.empty(),
+               "matop - nome do arquivo de saída tem que ser definido");
+    erroAssert(!logNome.empty(),
+               "matop - nome do arquivo de saída tem que ser definido");
+
+}
+
+int main(int argc, char **argv)
 {
+    // interprete opções de linha de comando
+    parseArgs(argc, argv);
     ifstream arq;
     Hash_LE tab_hash;
     int tam_tab;
@@ -18,12 +50,8 @@ int main(int argc, char const *argv[])
     string mensagem;
     Email e_aux;
     Arvore aux;
-    string nomeEntrada;
-    string nomeSaida;
-    nomeEntrada = argv[2]; 
-    nomeSaida = argv[4];
     string saida;
-    arq.open(nomeEntrada);
+    arq.open(logNome);
     arq >> tam_tab;
     tab_hash.Tabela = new Arvore[tam_tab];
 
@@ -34,8 +62,12 @@ int main(int argc, char const *argv[])
         {
             case 'E':
                 arq >> id_usuario >> id_email >> num_palavras;
-                if (num_palavras < 0 || num_palavras > 200 || id_usuario < 0 || id_usuario > 1000000 || id_email < 0 || id_email > 1000000)
+                // faz as verificacoes para poder inserir um email
+                if (num_palavras < 0 || num_palavras > 200 || id_usuario < 0 || 
+                id_usuario > 1000000 || id_email < 0 || id_email > 1000000)
                 {
+                    // lendo a mensagem mesmo assim para nao ter problema com o restante do programa
+                    getline(arq, mensagem);
                     break;
                 }
                 
@@ -99,10 +131,12 @@ int main(int argc, char const *argv[])
                 }else{
                     break;
                 }
-                break;  
+                break; 
+
+            default: break; 
         }
     }
-    ofstream fout(nomeSaida);
+    ofstream fout(outNome);
     fout << saida;
     arq.close();
     return 0;
