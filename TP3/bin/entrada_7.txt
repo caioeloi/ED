@@ -1,0 +1,61 @@
+3
+ENTREGA 9 994 30 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Pádua hesitou muito; afinal, teve de ceder aos conselhos de minha mãe, a quem D. Fortunata pediu auxílio.
+APAGA 9 994
+APAGA 9 575
+CONSULTA 58 106
+CONSULTA 58 230
+CONSULTA 72 423
+CONSULTA 35 121
+CONSULTA 58 226
+APAGA 35 280
+CONSULTA 9 426
+CONSULTA 58 931
+ENTREGA 35 995 17 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. José Dias amava os superlativos.
+CONSULTA 58 614
+CONSULTA 58 106
+APAGA 72 538
+CONSULTA 9 132
+CONSULTA 9 924
+ENTREGA 72 227 17 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Escutai; a anedota é curta.
+CONSULTA 72 674
+ENTREGA 9 520 20 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Minha mãe esperou que os anos viessem vindo.
+ENTREGA 35 995 44 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Em seguida, fez sinal aos anjos, e eles entoaram um trecho do cântico, tão concertadamente, que desmentiriam a hipótese do tenor italiano, se a execução fosse na terra; mas era no céu.
+CONSULTA 58 226
+CONSULTA 58 931
+ENTREGA 35 958 38 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Falou-me, quis que lhe falasse, e efetivamente conversamos por alguns minutos, mas são tão baixo e abafado que nem as paredes ouviram, elas que têm ouvidos.
+CONSULTA 58 569
+CONSULTA 35 995
+CONSULTA 72 866
+CONSULTA 72 538
+CONSULTA 58 785
+CONSULTA 35 995
+CONSULTA 9 139
+CONSULTA 72 640
+APAGA 9 994
+CONSULTA 72 247
+CONSULTA 72 346
+CONSULTA 9 426
+APAGA 72 346
+ENTREGA 9 139 46 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Levantou-se com o passo vagaroso do costume, não aquele vagar arrastado se era dos preguiçosos, mas um vagar calculado e deduzido, um silogismo completo, a premissa antes da conseqüência, a conseqüência antes da conclusão.
+CONSULTA 58 569
+CONSULTA 9 139
+ENTREGA 9 994 27 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Quanto ao meu espanto, se também foi grande, veio de mistura com uma sensação esquisita.
+CONSULTA 58 762
+CONSULTA 58 785
+ENTREGA 9 520 29 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Pádua, ou por ordem regulamentar, ou por especial designação, ficou substituindo o administrador com os respectivos honorários.
+APAGA 72 640
+CONSULTA 58 61
+APAGA 58 569
+APAGA 9 994
+ENTREGA 9 139 26 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Foi dos últimos que usaram presilhas no Rio de Janeiro, e talvez neste mundo.
+CONSULTA 9 924
+ENTREGA 72 227 30 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Pádua hesitou muito; afinal, teve de ceder aos conselhos de minha mãe, a quem D. Fortunata pediu auxílio.
+ENTREGA 9 116 50 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Podia ser um simples descargo de consciência, uma cerimônia, como as rezas de obrigação, sem devoção, que se dizem de tropel; a não ser que fosse para certificar aos próprios olhos a realidade que o coração lhe dizia.
+CONSULTA 35 250
+CONSULTA 9 994
+CONSULTA 72 37
+ENTREGA 58 32 31 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Nem foi só nessa ocasião que minha mãe lhes valeu; um dia chegou a salvar a vida ao Pádua.
+ENTREGA 72 423 50 Testa frequencia de distribuicao. 60 por cento das operacoes do tipo consulta. Aquela ameaça de um primeiro filho, o primeiro filho de Capitu, o casamento dela com outro, portanto, a separação absoluta, a perda, a aniquilação, tudo isso produzia um tal efeito, que não achei palavra nem gesto fiquei estúpido.
+APAGA 72 227
+APAGA 9 116
+CONSULTA 72 37

@@ -109,6 +109,7 @@ int main(int argc, char **argv)
                         saida += "CONSULTA " + to_string(id_usuario) + ' ' + to_string(id_email) + ": " + e_aux.mensagem + '\n';
                     }
                 }else{
+                    saida += "CONSULTA " + to_string(id_usuario) + ' ' + to_string(id_email) + ": MENSAGEM INEXISTENTE\n";
                     break;
                 }
                 break;
@@ -129,6 +130,7 @@ int main(int argc, char **argv)
                         saida += "OK: MENSAGEM APAGADA\n";
                     }
                 }else{
+                    saida += "ERRO: MENSAGEM INEXISTENTE\n";
                     break;
                 }
                 break; 

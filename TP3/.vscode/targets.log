@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 18 01:12:16 2022
+# Make data base, printed on Fri Jul 22 13:40:00 2022
 
 # Variables
 
@@ -15,12 +15,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
 # default
 .SHELLFLAGS := -c
 # makefile (from 'makefile', line 10)
 OBJ = obj
- 
 # makefile (from 'makefile', line 9)
 SRC = src
 # automatic
@@ -38,9 +37,9 @@ SHELL = /bin/sh
 # makefile (from 'makefile', line 12)
 BIN = bin
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"dc7ba51c4efcfec965eaa07de065afd6.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"dc7ba51c4efcfec965eaa07de065afd6.pt-br","_translationsConfigFile":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/tcf.json","_cacheRoot":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br","_resolvedLanguagePackCoreLocation":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/home/caiozec/.vscode-server/data/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /home/caiozec/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/node
+_ = /home/caiozec/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/node
 # makefile (from 'makefile', line 15)
 CFLAGS = -Wall -c -I$(INC) -g
 # makefile (from 'makefile', line 14)
@@ -60,11 +59,13 @@ VSCODE_CWD = /mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Cod
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/caiozec/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/bin/remote-cli:/home/caiozec/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Users/Loja integrada/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/heroku/bin:/mnt/c/Users/Loja integrada/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Loja integrada/AppData/Roaming/npm:/snap/bin
+PATH = /home/caiozec/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/bin/remote-cli:/home/caiozec/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Users/Loja integrada/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Loja integrada/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/heroku/bin:/mnt/c/Users/Loja integrada/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Loja integrada/AppData/Roaming/npm:/snap/bin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-0dc091a7-b72c-43bb-a213-ad725cb1a7e5.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-9f3354bb-213d-49ff-9a4e-c9fad31d696a.sock
+# environment
+VSCODE_SERVER_TAR = /mnt/c/Users/LOJAIN~1/AppData/Local/Temp/vscode-remote-wsl/3b889b090b5ad5793f524b5d1d39fda662b96a2a/vscode-server-stable-linux-x64.tar.gz
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -76,7 +77,7 @@ PWD = /home/caiozec/UFMG/ED/TP3
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/8_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -157,8 +158,10 @@ LANG = C
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=73/1024=7%, Rehash=0, Collisions=16/142=11%
+# Load=75/1024=7%, Rehash=0, Collisions=16/144=11%
 
 # Pattern-specific Variable Values
 
@@ -166,9 +169,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2064, inode 47898): 8 files, no impossibilities.
+# . (device 2064, inode 47898): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -201,7 +204,7 @@ src/Email.cpp:
 obj/main.o: include/Email.h include/Arvore.h include/HashLE.h include/msgassert.h src/main.cpp
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
-#  File does not exist.
+#  Last modified 2022-07-22 13:05:37.219018847
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -219,7 +222,7 @@ obj/main.o: include/Email.h include/Arvore.h include/HashLE.h include/msgassert.
 # automatic
 # ^ := include/Email.h include/Arvore.h include/HashLE.h include/msgassert.h src/main.cpp
 # automatic
-# ? := include/Email.h include/Arvore.h include/HashLE.h include/msgassert.h src/main.cpp
+# ? := src/main.cpp
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/16=19%
 #  recipe to execute (from 'makefile', line 29):
@@ -228,7 +231,7 @@ obj/main.o: include/Email.h include/Arvore.h include/HashLE.h include/msgassert.
 # Not a target:
 include/Arvore.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 16:50:23.273046743
+#  Last modified 2022-07-17 16:50:23.2730468
 #  File has been updated.
 #  Successfully updated.
 
@@ -262,7 +265,7 @@ src/Arvore.cpp:
 # Not a target:
 include/HashLE.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 17:13:58.403051061
+#  Last modified 2022-07-17 17:13:58.4030511
 #  File has been updated.
 #  Successfully updated.
 
@@ -272,6 +275,7 @@ include/HashLE.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 include/msgassert.h:
 #  Implicit rule search has been done.
@@ -295,9 +299,8 @@ obj/Email.o: include/Email.h include/Arvore.h include/HashLE.h include/msgassert
 
 # Not a target:
 src/main.cpp:
- 
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 23:16:26.138300508
+#  Last modified 2022-07-22 13:38:44.779025
 #  File has been updated.
 #  Successfully updated.
 
@@ -309,7 +312,7 @@ src/HashLE.cpp:
 
 bin/main: obj/main.o obj/HashLE.o obj/Email.o obj/Arvore.o
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2022-07-22 13:05:37.779018849
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -320,7 +323,7 @@ bin/main: obj/main.o obj/HashLE.o obj/Email.o obj/Arvore.o
 # Not a target:
 include/Email.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 15:54:13.593036459
+#  Last modified 2022-07-17 15:54:13.5930365
 #  File has been updated.
 #  Successfully updated.
 
@@ -332,12 +335,12 @@ include/Email.h:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 288 B / avg = 10 B
-# current buf: size = 8162 B / used = 288 B / count = 27 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 28 / storage = 294 B / avg = 10 B
+# current buf: size = 8162 B / used = 294 B / count = 28 / avg = 10 B
 
-# strcache performance: lookups = 57 / hit rate = 52%
+# strcache performance: lookups = 58 / hit rate = 51%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=1/57=2%
-# Finished Make data base on Mon Jul 18 01:12:16 2022
+# Load=28/8192=0%, Rehash=0, Collisions=1/58=2%
+# Finished Make data base on Fri Jul 22 13:40:00 2022
 
  
